@@ -49,11 +49,11 @@ html {
 }
 
 .prologo__world {
-  background-image: url(/pretor/_astro/intro/world.webp);
+  background-image: url(/_astro/intro/world.webp);
 }
 
 .prologo__dust {
-  background-image: url(/pretor/_astro/intro/dust.webp);
+  background-image: url(/_astro/intro/dust.webp);
   mix-blend-mode: screen;
   opacity: 0;
   transition: opacity 1.2s ease;
@@ -81,12 +81,12 @@ html {
 
 .prologo__curtain--l {
   left: 0;
-  background-image: url(/pretor/_astro/intro/curtain-l.webp);
+  background-image: url(/_astro/intro/curtain-l.webp);
 }
 
 .prologo__curtain--r {
   right: 0;
-  background-image: url(/pretor/_astro/intro/curtain-r.webp);
+  background-image: url(/_astro/intro/curtain-r.webp);
 }
 
 /* loader: gold mark pulsing on near-black while assets decode */
@@ -225,7 +225,7 @@ html {
 .prologo--movil .prologo__world {
   position: absolute;
   inset: 0;
-  background: #0c0a08 url(/pretor/_astro/intro/world.webp) center / cover no-repeat;
+  background: #0c0a08 url(/_astro/intro/world.webp) center / cover no-repeat;
   animation: prologoZoomM 5s ease-out forwards;
 }
 
