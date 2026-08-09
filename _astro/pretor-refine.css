@@ -720,6 +720,14 @@ summary:focus-visible {
   line-height: 1.2;
 }
 .empezar__step p { color: var(--muted); max-width: 42ch; }
+/* The steps are self-serve now, so step 01 carries the link that starts them. Without this the
+   global `a { color: inherit; text-decoration: none }` renders it as ordinary prose, which is the
+   same as not having put a link there. Matches .faq__body a, which solved this already. */
+.empezar__step a,
+.empezar__guide a { color: var(--oxblood); border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent); }
+.empezar__step a:hover,
+.empezar__guide a:hover { border-color: var(--oxblood); }
+.empezar__guide { margin-top: 1.6rem; font-weight: 600; }
 @media (min-width: 880px) { .empezar__list { grid-template-columns: repeat(3, 1fr); } }
 
 .faq { margin-top: clamp(2.8rem, 6vw, 4.5rem); max-width: 760px; }
