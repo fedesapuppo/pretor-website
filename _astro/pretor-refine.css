@@ -851,3 +851,355 @@ summary:focus-visible {
   opacity: 1;
   visibility: visible;
 }
+
+/* ============================================================
+   12. Sections added for the tiers + accuracy pass (PRE-42)
+   Planes, the comparison against a general AI, pull quotes,
+   the standalone testimonial, and the bespoke-agents block.
+   ============================================================ */
+
+/* ---- 12.1 Hero: the mobile-first line ---------------------- */
+.hero__mobile {
+  margin-top: 1.1rem;
+  max-width: 54ch;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.65;
+  color: var(--muted);
+  border-left: 2px solid var(--gold);
+  padding-left: .9rem;
+}
+
+/* ---- 12.2 Pull quotes -------------------------------------- */
+.pullquote {
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  max-width: 60ch;
+  text-align: center;
+}
+.pullquote blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  line-height: 1.35;
+  letter-spacing: .005em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.pullquote figcaption {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+/* Colour follows the section it sits in, not a modifier class: the first
+   version hard-coded dark ink and went unreadable the moment a quote was
+   dropped into a dark section. */
+.section--dark .pullquote blockquote { color: var(--marble); }
+.section--dark .pullquote figcaption { color: var(--dmuted); }
+
+/* ---- 12.3 Standalone testimonial band ---------------------- */
+.testimonial {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  background: var(--stone-2);
+  border-block: 1px solid var(--line);
+}
+.testimonial__inner {
+  max-width: 62ch;
+  text-align: center;
+}
+.testimonial__quote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 1.1rem + 1.3vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.testimonial__by {
+  margin-top: 1.2rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+
+/* ---- 12.4 Versus table ------------------------------------- */
+.versus__wrap {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--stone-card);
+  box-shadow: var(--shadow);
+}
+.versus__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step-0);
+}
+.versus__table th,
+.versus__table td {
+  padding: .95rem 1.1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.versus__table tbody tr:last-child th,
+.versus__table tbody tr:last-child td { border-bottom: 0; }
+.versus__table thead th {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--stone-2);
+}
+.versus__table tbody th {
+  font-weight: 600;
+  color: var(--ink);
+  width: 22%;
+}
+.versus__table td { color: var(--muted); }
+.versus__ours {
+  color: var(--ink) !important;
+  background: color-mix(in srgb, var(--gold) 9%, transparent);
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .versus__table thead { display: none; }
+  .versus__table tr { display: block; border-bottom: 1px solid var(--line); }
+  .versus__table tbody tr:last-child { border-bottom: 0; }
+  .versus__table th,
+  .versus__table td { display: block; width: auto; border-bottom: 0; padding: .5rem 1rem; }
+  .versus__table tbody th { padding-top: 1rem; font-family: var(--serif); font-size: var(--step-1); }
+  .versus__table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .2rem;
+  }
+  .versus__ours { border-radius: var(--radius-sm); margin: 0 .5rem .8rem; }
+}
+
+/* ---- 12.5 Planes ------------------------------------------- */
+.planes__promo {
+  margin-top: 2rem;
+  padding: .85rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--gold) 8%, transparent);
+  color: var(--marble);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+.planes__promo a { color: var(--gold-soft); }
+.planes__grid {
+  list-style: none;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 640px) { .planes__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .planes__grid { grid-template-columns: repeat(4, 1fr); } }
+.plan {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.plan--featured {
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  background: var(--panel-2);
+  box-shadow: 0 24px 50px -30px rgba(205, 164, 85, .45);
+}
+.plan__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  color: var(--marble);
+  letter-spacing: .02em;
+}
+.plan__price {
+  margin: .5rem 0 0;
+  font-family: var(--mono);
+  font-size: var(--step-2);
+  color: var(--gold);
+  line-height: 1.1;
+}
+.plan__per {
+  font-size: var(--step--1);
+  color: var(--dmuted);
+  letter-spacing: .02em;
+}
+.plan__includes {
+  margin: .9rem 0 0;
+  font-size: var(--step--1);
+  line-height: 1.6;
+  color: var(--marble);
+}
+.plan__list {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--dmuted);
+}
+.plan__list li { padding-left: 1.1rem; position: relative; }
+.plan__list li::before {
+  content: "·";
+  position: absolute;
+  left: .25rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.plan__cta { margin-top: auto; justify-content: center; text-align: center; }
+.planes__terms {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  gap: .9rem;
+  max-width: 72ch;
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--dmuted);
+}
+.planes__terms a { color: var(--gold-soft); }
+.planes__source { color: var(--dmuted); opacity: .8; }
+
+/* ---- 12.6 Agentes a medida --------------------------------- */
+.medida__example {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 1.5rem 1.6rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--oxblood);
+  border-radius: var(--radius);
+  background: var(--stone-card);
+  max-width: 68ch;
+}
+.medida__label {
+  margin: 0 0 .6rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.medida__text {
+  margin: 0;
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--ink);
+}
+.medida__cta { margin-top: 1.8rem; }
+
+/* ---- 12.7 The client's line above "Por qué Pretor" --------- */
+.porque__quote {
+  margin: 0 0 1.2rem;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.porque__quote span {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+
+/* ---- 12.8 Agent cards: tag pinned to the bottom ------------
+   The tag used to sit beside the name in a flex row. Once the tags
+   grew ("Único que lee clientes y honorarios") they wrapped, so a
+   tagged card had a two-line header and an untagged one had a
+   single line, and nothing below them lined up across the row.
+   The card is now a column: the body absorbs the slack, so the tag
+   and the P/U/X row sit on the same baseline in every card,
+   whether or not the card has a tag. */
+.agent[data-astro-cid-mrg5s34m] {
+  display: flex;
+  flex-direction: column;
+}
+.agent__body[data-astro-cid-mrg5s34m] { flex: 1 1 auto; }
+.agent__tag[data-astro-cid-mrg5s34m] {
+  align-self: flex-start;
+  margin-bottom: .9rem;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .agent__tag[data-astro-cid-mrg5s34m] { white-space: normal; }
+}
+
+/* ---- 12.9 Card copy is justified ---------------------------
+   Requested 2026-08-10: every card body reads as a justified
+   block. Hyphenation is not optional here: these columns are
+   narrow (one card is ~34ch), and justify without hyphens opens
+   rivers of white space between words. lang="es-AR" on <html>
+   gives the browser the Spanish patterns it needs.
+   Deliberately NOT justified: the FAQ answers (accordion prose,
+   not a card) and the plan cards (short list items, where
+   justify would stretch three-word lines). */
+.marco__body[data-astro-cid-z2ekr6xw],
+.cap__body[data-astro-cid-eq4gkk3n],
+.agent__body[data-astro-cid-mrg5s34m],
+.sec__promise[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv],
+.sec__layer[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv] {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ---- 12.10 Celular: nada de palabras sueltas colgando -------
+   Pedido 2026-08-10 ("que en celular no haya una palabra sobre
+   otra"). Medido a 320 y 390 px no hay solapamiento real de
+   cajas: lo que hay es texto apilado, líneas que terminan con
+   una sola palabra colgada. balance reparte los títulos en
+   líneas parejas; pretty evita la viuda de una palabra en los
+   cuerpos. Ambas degradan a nada en navegadores viejos.
+   En la lista de agentes del hero, el ancho fijo de la etiqueta
+   (8.5em) dejaba a la descripción sin lugar y la partía en dos
+   líneas: en pantalla angosta la etiqueta cede el ancho. */
+@media (max-width: 640px) {
+  .display,
+  .hero__world-title,
+  .marco__title,
+  .cap__title,
+  .agent__name,
+  .agent__role,
+  .agent__tag,
+  .plan__name,
+  .sec__promise h3,
+  .sec__layer h4,
+  .porque__item h3 {
+    text-wrap: balance;
+  }
+
+  .lead,
+  .marco__body,
+  .cap__body,
+  .agent__body,
+  .sec__promise p,
+  .sec__layer p,
+  .porque__item p,
+  .faq__body {
+    text-wrap: pretty;
+  }
+
+  .hero__agents[data-astro-cid-bbe6dxrz] b[data-astro-cid-bbe6dxrz] {
+    min-width: 0;
+    flex: none;
+  }
+}
