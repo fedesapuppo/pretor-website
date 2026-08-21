@@ -1,0 +1,2929 @@
+/* ==========================================================================
+   Pretor - pretor.ar
+   ==========================================================================
+
+   The whole stylesheet for the site, in one file and in cascade order.
+
+   It used to be three <link>s, and the order between them was the only
+   thing that made the page correct: the compiled Astro build first, the
+   hand-written refinements over it, the intro last. That order lived
+   nowhere except the sequence of <link> tags in index.html, so an edit
+   that reordered them changed the page and said nothing.
+
+   The three are kept below as three sections, in exactly the order they
+   used to load. Nothing was merged, reordered, deduplicated or deleted in
+   the move, and no value was rewritten: the cascade is identical
+   declaration for declaration, all 1633 of them, position for position.
+   Sections 2 and 3 still override section 1 the way they always did.
+
+   Fonts stay in their own sheet (_astro/fonts.css). Those are @font-face
+   declarations paired with the <link rel="preload"> tags in the head,
+   not design rules, and keeping them apart keeps the preload readable.
+
+   ========================================================================== */
+
+
+/* ==========================================================================
+   SECTION 1 of 3 - compiled Astro build output
+   was: _astro/index.edUtr7Fi.css
+
+   Generated code, but not regenerable: the Astro source it came from was
+   never committed and no longer exists. This IS the source now. It still
+   carries the data-astro-cid-* attribute selectors index.html matches.
+   ========================================================================== */
+
+:root {
+  --stone: #f4f0e8;
+  --stone-2: #ece6d8;
+  --stone-card: #faf7f0;
+  --ink: #1a1a1a;
+  --muted: #5b5852;
+  --oxblood: #6b2737;
+  --oxblood-soft: #8a3a4b;
+  --line: #ddd6c6;
+  --black: #0b0b0e;
+  --panel: #121218;
+  --panel-2: #16161c;
+  --marble: #ece7da;
+  --dmuted: #8d897e;
+  --gold: #c8a35b;
+  --gold-soft: #d8be8a;
+  --dline: #25252e;
+  --serif: "Cinzel", "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --step--1: clamp(.78rem, .74rem + .18vw, .88rem);
+  --step-0: clamp(.95rem, .9rem + .25vw, 1.05rem);
+  --step-1: clamp(1.15rem, 1.05rem + .5vw, 1.35rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
+  --step-4: clamp(2.6rem, 2rem + 3vw, 4.6rem);
+  --pad-x: clamp(1.25rem, 5vw, 4rem);
+  --section-y: clamp(4rem, 9vw, 8rem);
+  --maxw: 1180px;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+*,*:before,*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,*:before,*:after {
+    animation-duration: .001ms!important;
+    transition-duration: .001ms!important;
+  }
+}
+body {
+  font-family: var(--sans);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--stone);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+::selection {
+  background: var(--oxblood);
+  color: var(--stone);
+}
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+.section {
+  padding-block: var(--section-y);
+}
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+#top {
+  scroll-margin-top: 0;
+}
+.section--dark {
+  background: var(--black);
+  color: var(--marble);
+}
+.section--stone {
+  background: var(--stone);
+  color: var(--ink);
+}
+.section--stone-2 {
+  background: var(--stone-2);
+  color: var(--ink);
+}
+.eyebrow {
+  font-size: var(--step--1);
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--oxblood);
+}
+.section--dark .eyebrow {
+  font-family: var(--mono);
+  letter-spacing: .16em;
+  text-transform: none;
+  color: var(--gold);
+}
+.display {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: .01em;
+}
+.section--dark .display {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.12;
+}
+.lead {
+  font-size: var(--step-1);
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 56ch;
+}
+.section--dark .lead {
+  color: var(--dmuted);
+}
+.maxim {
+  font-family: var(--serif);
+  letter-spacing: .18em;
+  font-size: var(--step--1);
+  color: var(--oxblood);
+}
+.section--dark .maxim {
+  color: var(--gold);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: .03em;
+  padding: .85em 1.6em;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn--primary {
+  background: var(--ink);
+  color: var(--stone);
+}
+.btn--primary:hover {
+  background: var(--oxblood);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--stone);
+}
+.section--dark .btn--primary {
+  background: var(--gold);
+  color: #16130b;
+}
+.section--dark .btn--primary:hover {
+  background: var(--gold-soft);
+}
+.section--dark .btn--ghost {
+  color: var(--marble);
+  border-color: var(--dline);
+}
+.section--dark .btn--ghost:hover {
+  background: var(--panel);
+  border-color: var(--gold);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s var(--ease),transform .7s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion:reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+.section-head {
+  max-width: 60ch;
+}
+.section-head .display {
+  font-size: var(--step-3);
+  margin-top: .6rem;
+}
+.section-head .lead {
+  margin-top: 1.2rem;
+}
+.grid {
+  display: grid;
+  gap: 1px;
+}
+@media (min-width:720px) {
+  .cols-2 {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (min-width:880px) {
+  .cols-3 {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+@media (min-width:980px) {
+  .cols-4 {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.section--dark :focus-visible {
+  outline-color: var(--gold);
+}
+.nav[data-astro-cid-dmqpwcec] {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb,var(--black) 72%,transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid color-mix(in srgb,var(--gold) 14%,transparent);
+  transition: background .3s var(--ease),box-shadow .3s var(--ease);
+}
+.nav[data-astro-cid-dmqpwcec][data-scrolled] {
+  background: color-mix(in srgb,var(--black) 90%,transparent);
+  box-shadow: 0 10px 40px -20px #000c;
+}
+.nav__inner[data-astro-cid-dmqpwcec] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: .95rem;
+}
+.brand[data-astro-cid-dmqpwcec] {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: .3em;
+  font-size: .95rem;
+  color: var(--marble);
+}
+.brand__tick[data-astro-cid-dmqpwcec] {
+  width: 4px;
+  height: 1.05em;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.nav__links[data-astro-cid-dmqpwcec] {
+  display: none;
+  align-items: center;
+  gap: clamp(1.2rem,2.4vw,2.2rem);
+}
+.nav__links[data-astro-cid-dmqpwcec] a[data-astro-cid-dmqpwcec] {
+  font-size: var(--step--1);
+  color: var(--dmuted);
+  letter-spacing: .02em;
+  transition: color .2s var(--ease);
+}
+.nav__links[data-astro-cid-dmqpwcec] a[data-astro-cid-dmqpwcec]:hover {
+  color: var(--marble);
+}
+.nav__cta[data-astro-cid-dmqpwcec] {
+  color: var(--gold)!important;
+  border: 1px solid color-mix(in srgb,var(--gold) 40%,transparent);
+  padding: .45em 1em;
+  border-radius: 999px;
+}
+.nav__cta[data-astro-cid-dmqpwcec]:hover {
+  background: color-mix(in srgb,var(--gold) 14%,transparent);
+}
+.nav__lang[data-astro-cid-dmqpwcec] {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--dmuted);
+  letter-spacing: .1em;
+}
+.nav__lang[data-astro-cid-dmqpwcec] b[data-astro-cid-dmqpwcec] {
+  color: var(--gold);
+  font-weight: 500;
+}
+.nav__toggle[data-astro-cid-dmqpwcec] {
+  background: none;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.nav__bars[data-astro-cid-dmqpwcec],.nav__bars[data-astro-cid-dmqpwcec]:before,.nav__bars[data-astro-cid-dmqpwcec]:after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--marble);
+  transition: transform .3s var(--ease),opacity .2s var(--ease);
+}
+.nav__bars[data-astro-cid-dmqpwcec] {
+  position: relative;
+}
+.nav__bars[data-astro-cid-dmqpwcec]:before {
+  position: absolute;
+  top: -6px;
+}
+.nav__bars[data-astro-cid-dmqpwcec]:after {
+  position: absolute;
+  top: 6px;
+}
+.nav[data-astro-cid-dmqpwcec][data-open] .nav__bars[data-astro-cid-dmqpwcec] {
+  background: transparent;
+}
+.nav[data-astro-cid-dmqpwcec][data-open] .nav__bars[data-astro-cid-dmqpwcec]:before {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav[data-astro-cid-dmqpwcec][data-open] .nav__bars[data-astro-cid-dmqpwcec]:after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.nav__panel[data-astro-cid-dmqpwcec] {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  padding: .5rem var(--pad-x) 1.4rem;
+  border-top: 1px solid var(--dline);
+}
+.nav__panel[data-astro-cid-dmqpwcec][hidden] {
+  display: none;
+}
+.nav__panel[data-astro-cid-dmqpwcec] a[data-astro-cid-dmqpwcec] {
+  font-family: var(--serif);
+  letter-spacing: .06em;
+  font-size: 1.05rem;
+  color: var(--marble);
+  padding: .6rem 0;
+  border-bottom: 1px solid color-mix(in srgb,var(--dline) 70%,transparent);
+}
+.nav__panel-cta[data-astro-cid-dmqpwcec] {
+  color: var(--gold)!important;
+}
+.nav__panel[data-astro-cid-dmqpwcec] .nav__lang[data-astro-cid-dmqpwcec] {
+  padding-top: .8rem;
+}
+@media (min-width:860px) {
+  .nav__links[data-astro-cid-dmqpwcec] {
+    display: flex;
+  }
+  .nav__toggle[data-astro-cid-dmqpwcec],.nav__panel[data-astro-cid-dmqpwcec] {
+    display: none;
+  }
+}
+.footer[data-astro-cid-sz7xmlte] {
+  padding-block: clamp(3rem,6vw,5rem) 2rem;
+  border-top: 1px solid var(--dline);
+}
+.footer__inner[data-astro-cid-sz7xmlte] {
+  display: grid;
+  gap: 2.5rem;
+}
+.footer__word[data-astro-cid-sz7xmlte] {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: .32em;
+  font-size: 1.2rem;
+}
+.footer__brand[data-astro-cid-sz7xmlte] p[data-astro-cid-sz7xmlte] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+  margin-top: .4rem;
+}
+.footer__maxim[data-astro-cid-sz7xmlte] {
+  font-family: var(--serif);
+  letter-spacing: .18em;
+  color: var(--gold)!important;
+}
+.footer__nav[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.5rem;
+  align-items: flex-start;
+}
+.footer__nav[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+  transition: color .2s var(--ease);
+}
+.footer__nav[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover {
+  color: var(--marble);
+}
+.footer__meta[data-astro-cid-sz7xmlte] p[data-astro-cid-sz7xmlte] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+  margin-bottom: .4rem;
+}
+.footer__meta[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte] {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer__nav[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte] {
+  text-decoration: none;
+}
+.footer__lang[data-astro-cid-sz7xmlte] {
+  font-family: var(--mono);
+  letter-spacing: .08em;
+}
+.footer__lang[data-astro-cid-sz7xmlte] b[data-astro-cid-sz7xmlte] {
+  color: var(--gold);
+}
+.footer__base[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .6rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--dline);
+  font-size: .78rem;
+  color: var(--dmuted);
+}
+@media (min-width:760px) {
+  .footer__inner[data-astro-cid-sz7xmlte] {
+    grid-template-columns: 1.4fr 1fr 1.2fr;
+  }
+}
+.skip-link[data-astro-cid-5hce7sga] {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  background: var(--ink);
+  color: var(--stone);
+  padding: .6rem 1rem;
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  transition: top .2s var(--ease);
+}
+.skip-link[data-astro-cid-5hce7sga]:focus {
+  top: 1rem;
+}
+.hero[data-astro-cid-bbe6dxrz] {
+  background: var(--stone);
+}
+.hero__intro[data-astro-cid-bbe6dxrz] {
+  padding-top: clamp(3rem,8vw,6rem);
+  padding-bottom: clamp(2.5rem,6vw,4.5rem);
+  max-width: 980px;
+}
+.hero__title[data-astro-cid-bbe6dxrz] {
+  font-size: var(--step-4);
+  margin-top: 1.2rem;
+  max-width: 18ch;
+}
+.hero__title[data-astro-cid-bbe6dxrz] em[data-astro-cid-bbe6dxrz] {
+  font-style: normal;
+  color: var(--oxblood);
+}
+.hero__lead[data-astro-cid-bbe6dxrz] {
+  margin-top: 1.6rem;
+}
+.hero__cta[data-astro-cid-bbe6dxrz] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2.2rem;
+}
+.hero__split[data-astro-cid-bbe6dxrz] {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.hero__world[data-astro-cid-bbe6dxrz] {
+  padding: clamp(2.6rem,6vw,4.5rem) var(--pad-x);
+}
+.hero__world--roman[data-astro-cid-bbe6dxrz] {
+  background: var(--stone-2);
+  color: var(--ink);
+}
+.hero__world--ai[data-astro-cid-bbe6dxrz] {
+  background: var(--black);
+  color: var(--marble);
+  background-image: linear-gradient(90deg,var(--gold),rgba(200,163,91,0) 60%),radial-gradient(circle at 80% 6%,rgba(200,163,91,.14),transparent 55%);
+  background-size: 100% 2px,auto;
+  background-repeat: no-repeat;
+  background-position: top left,center;
+}
+.hero__world[data-astro-cid-bbe6dxrz] .eyebrow[data-astro-cid-bbe6dxrz] {
+  margin-bottom: 1rem;
+}
+.hero__world--ai[data-astro-cid-bbe6dxrz] .eyebrow[data-astro-cid-bbe6dxrz] {
+  font-family: var(--mono);
+  color: var(--gold);
+  text-transform: none;
+  letter-spacing: .14em;
+}
+.hero__world-title[data-astro-cid-bbe6dxrz] {
+  font-size: var(--step-2);
+  line-height: 1.15;
+}
+.hero__world-title--ai[data-astro-cid-bbe6dxrz] {
+  font-family: var(--sans);
+  font-weight: 600;
+}
+.hero__world-text[data-astro-cid-bbe6dxrz] {
+  margin-top: 1rem;
+  color: var(--muted);
+  max-width: 34ch;
+}
+.hero__world--roman[data-astro-cid-bbe6dxrz] .maxim[data-astro-cid-bbe6dxrz] {
+  margin-top: 1.4rem;
+}
+.hero__agents[data-astro-cid-bbe6dxrz] {
+  list-style: none;
+  margin-top: 1.4rem;
+  display: grid;
+  gap: .5rem;
+}
+.hero__agents[data-astro-cid-bbe6dxrz] li[data-astro-cid-bbe6dxrz] {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--dmuted);
+  display: flex;
+  gap: .6rem;
+}
+.hero__agents[data-astro-cid-bbe6dxrz] b[data-astro-cid-bbe6dxrz] {
+  color: var(--marble);
+  font-weight: 500;
+  min-width: 8.5em;
+}
+.hero__seam[data-astro-cid-bbe6dxrz] {
+  display: none;
+}
+@media (min-width:880px) {
+  .hero__split[data-astro-cid-bbe6dxrz] {
+    flex-direction: row;
+  }
+  .hero__world[data-astro-cid-bbe6dxrz] {
+    flex: 1;
+    padding: clamp(3.5rem,5vw,5.5rem) clamp(2.5rem,4vw,4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 340px;
+  }
+  .hero__world--ai[data-astro-cid-bbe6dxrz] {
+    background-image: radial-gradient(circle at 70% 30%,rgba(200,163,91,.12),transparent 60%);
+  }
+  .hero__seam[data-astro-cid-bbe6dxrz] {
+    display: block;
+    position: absolute;
+    top: 14%;
+    bottom: 14%;
+    left: 50%;
+    width: 1px;
+    background: linear-gradient(transparent,var(--gold),transparent);
+    opacity: .6;
+  }
+}
+.marco__grid[data-astro-cid-z2ekr6xw] {
+  list-style: none;
+  margin-top: clamp(2.5rem,5vw,4rem);
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.marco__card[data-astro-cid-z2ekr6xw] {
+  background: var(--stone-card);
+  padding: clamp(1.8rem,3vw,2.6rem);
+}
+.marco__n[data-astro-cid-z2ekr6xw] {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  color: var(--oxblood);
+  letter-spacing: .05em;
+}
+.marco__title[data-astro-cid-z2ekr6xw] {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+  margin: .9rem 0 .7rem;
+  line-height: 1.2;
+}
+.marco__body[data-astro-cid-z2ekr6xw] {
+  color: var(--muted);
+  font-size: var(--step-0);
+  max-width: 42ch;
+}
+@media (min-width:720px) {
+  .marco__grid[data-astro-cid-z2ekr6xw] {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (min-width:1040px) {
+  .marco__grid[data-astro-cid-z2ekr6xw] {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+.cap__grid[data-astro-cid-eq4gkk3n] {
+  list-style: none;
+  margin-top: clamp(2.5rem,5vw,4rem);
+  display: grid;
+  gap: .9rem;
+}
+.cap__card[data-astro-cid-eq4gkk3n] {
+  background: var(--panel);
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  padding: clamp(1.5rem,2.6vw,2rem);
+  transition: border-color .3s var(--ease),transform .3s var(--ease);
+}
+.cap__card[data-astro-cid-eq4gkk3n]:hover {
+  border-color: color-mix(in srgb,var(--gold) 45%,transparent);
+  transform: translateY(-3px);
+}
+.cap__dot[data-astro-cid-eq4gkk3n] {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px color-mix(in srgb,var(--gold) 18%,transparent);
+  margin-bottom: 1.1rem;
+}
+.cap__title[data-astro-cid-eq4gkk3n] {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: var(--step-1);
+  letter-spacing: -.01em;
+  margin-bottom: .55rem;
+}
+.cap__body[data-astro-cid-eq4gkk3n] {
+  color: var(--dmuted);
+  font-size: var(--step-0);
+}
+@media (min-width:640px) {
+  .cap__grid[data-astro-cid-eq4gkk3n] {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (min-width:1000px) {
+  .cap__grid[data-astro-cid-eq4gkk3n] {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+.agents__grid[data-astro-cid-mrg5s34m] {
+  list-style: none;
+  margin-top: clamp(2.5rem,5vw,3.5rem);
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.agent[data-astro-cid-mrg5s34m] {
+  background: var(--stone-card);
+  padding: clamp(1.6rem,2.8vw,2.2rem);
+  transition: background .3s var(--ease);
+}
+.agent[data-astro-cid-mrg5s34m]:hover {
+  background: #fff;
+}
+.agent__top[data-astro-cid-mrg5s34m] {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  flex-wrap: wrap;
+}
+.agent__name[data-astro-cid-mrg5s34m] {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+}
+.agent__tag[data-astro-cid-mrg5s34m] {
+  font-size: .68rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  border: 1px solid color-mix(in srgb,var(--oxblood) 40%,transparent);
+  border-radius: 999px;
+  padding: .25em .7em;
+}
+.agent__role[data-astro-cid-mrg5s34m] {
+  font-family: var(--mono);
+  font-size: .76rem;
+  color: var(--oxblood-soft);
+  letter-spacing: .03em;
+  margin: .5rem 0 .9rem;
+}
+.agent__body[data-astro-cid-mrg5s34m] {
+  color: var(--muted);
+  font-size: var(--step-0);
+  max-width: 46ch;
+}
+.agent--leader[data-astro-cid-mrg5s34m] {
+  background: var(--ink);
+  color: var(--stone);
+  position: relative;
+  overflow: hidden;
+}
+.agent--leader[data-astro-cid-mrg5s34m]:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 88% 0%,rgba(200,163,91,.2),transparent 55%);
+  pointer-events: none;
+}
+.agent--leader[data-astro-cid-mrg5s34m]:hover {
+  background: var(--ink);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .agent__name[data-astro-cid-mrg5s34m] {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: var(--marble);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .agent__tag[data-astro-cid-mrg5s34m] {
+  color: var(--gold);
+  border-color: color-mix(in srgb,var(--gold) 45%,transparent);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .agent__role[data-astro-cid-mrg5s34m] {
+  color: var(--gold-soft);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .agent__body[data-astro-cid-mrg5s34m] {
+  color: #d9d4c8;
+}
+@media (min-width:760px) {
+  .agents__grid[data-astro-cid-mrg5s34m] {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media (min-width:1080px) {
+  .agents__grid[data-astro-cid-mrg5s34m] {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+.sec__promises[data-astro-cid-xdski4nv] {
+  list-style: none;
+  margin-top: clamp(2.5rem,5vw,4rem);
+  display: grid;
+  gap: 1px;
+  background: var(--dline);
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sec__promise[data-astro-cid-xdski4nv] {
+  background: var(--panel);
+  padding: clamp(1.8rem,3vw,2.6rem);
+}
+.sec__check[data-astro-cid-xdski4nv] {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: color-mix(in srgb,var(--gold) 16%,transparent);
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 1.1rem;
+}
+.sec__promise[data-astro-cid-xdski4nv] h3[data-astro-cid-xdski4nv] {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  font-size: var(--step-1);
+  margin-bottom: .6rem;
+}
+.sec__promise[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv] {
+  color: var(--dmuted);
+  font-size: var(--step-0);
+}
+.sec__deep[data-astro-cid-xdski4nv] {
+  margin-top: 1.4rem;
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  background: var(--panel-2);
+}
+.sec__deep[data-astro-cid-xdski4nv] summary[data-astro-cid-xdski4nv] {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1.3rem,2.4vw,1.8rem) clamp(1.5rem,3vw,2.4rem);
+  font-family: var(--mono);
+  font-size: var(--step-0);
+  color: var(--gold);
+}
+.sec__deep[data-astro-cid-xdski4nv] summary[data-astro-cid-xdski4nv]::-webkit-details-marker {
+  display: none;
+}
+.sec__chev[data-astro-cid-xdski4nv] {
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  transition: transform .3s var(--ease);
+  flex: none;
+}
+.sec__deep[data-astro-cid-xdski4nv][open] .sec__chev[data-astro-cid-xdski4nv] {
+  transform: rotate(-135deg);
+}
+.sec__deep-body[data-astro-cid-xdski4nv] {
+  padding: 0 clamp(1.5rem,3vw,2.4rem) clamp(1.8rem,3vw,2.6rem);
+}
+.sec__explain[data-astro-cid-xdski4nv] {
+  color: var(--dmuted);
+  max-width: 70ch;
+}
+.sec__explain[data-astro-cid-xdski4nv] b[data-astro-cid-xdski4nv] {
+  color: var(--marble);
+  font-weight: 500;
+}
+.sec__table-wrap[data-astro-cid-xdski4nv] {
+  margin-top: 1.8rem;
+}
+.sec__table[data-astro-cid-xdski4nv] {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+.sec__table[data-astro-cid-xdski4nv] thead[data-astro-cid-xdski4nv] {
+  display: none;
+}
+.sec__table[data-astro-cid-xdski4nv] tr[data-astro-cid-xdski4nv] {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--dline);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  margin-bottom: .8rem;
+}
+.sec__table[data-astro-cid-xdski4nv] th[data-astro-cid-xdski4nv][scope=row] {
+  display: block;
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  font-size: var(--step-1);
+  color: var(--marble);
+  text-align: left;
+  margin-bottom: .8rem;
+}
+.sec__table[data-astro-cid-xdski4nv] td[data-astro-cid-xdski4nv] {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .35rem 0;
+  color: var(--dmuted);
+}
+.sec__table[data-astro-cid-xdski4nv] td[data-astro-cid-xdski4nv]:before {
+  content: attr(data-label);
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--dmuted);
+  opacity: .8;
+}
+.sec__why[data-astro-cid-xdski4nv] {
+  border-top: 1px solid var(--dline);
+  margin-top: .5rem;
+  padding-top: .8rem!important;
+}
+.sec__why[data-astro-cid-xdski4nv]:before {
+  flex: none;
+}
+.leg[data-astro-cid-xdski4nv] {
+  font-family: var(--mono);
+  font-size: .72rem;
+  padding: .2em .7em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.leg--no[data-astro-cid-xdski4nv] {
+  color: #8fd6a8;
+  background: color-mix(in srgb,#8fd6a8 14%,transparent);
+}
+.leg--yes[data-astro-cid-xdski4nv] {
+  color: #e7a3a3;
+  background: color-mix(in srgb,#e7a3a3 14%,transparent);
+}
+.leg--partial[data-astro-cid-xdski4nv] {
+  color: var(--gold-soft);
+  background: color-mix(in srgb,var(--gold) 14%,transparent);
+}
+.sec__layers[data-astro-cid-xdski4nv] {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1px;
+  background: var(--dline);
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.sec__layer[data-astro-cid-xdski4nv] {
+  background: var(--panel);
+  padding: 1.6rem;
+}
+.sec__layer-n[data-astro-cid-xdski4nv] {
+  font-family: var(--mono);
+  color: var(--gold);
+  font-size: var(--step-1);
+}
+.sec__layer[data-astro-cid-xdski4nv] h4[data-astro-cid-xdski4nv] {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  font-size: var(--step-0);
+  margin: .6rem 0 .5rem;
+  color: var(--marble);
+}
+.sec__layer[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+}
+@media (min-width:760px) {
+  .sec__promises[data-astro-cid-xdski4nv],.sec__layers[data-astro-cid-xdski4nv] {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+@media (min-width:920px) {
+  .sec__table[data-astro-cid-xdski4nv] thead[data-astro-cid-xdski4nv] {
+    display: table-header-group;
+  }
+  .sec__table[data-astro-cid-xdski4nv] tbody[data-astro-cid-xdski4nv] {
+    display: table-row-group;
+  }
+  .sec__table[data-astro-cid-xdski4nv] tr[data-astro-cid-xdski4nv] {
+    display: table-row;
+    background: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .sec__table[data-astro-cid-xdski4nv] th[data-astro-cid-xdski4nv],.sec__table[data-astro-cid-xdski4nv] td[data-astro-cid-xdski4nv] {
+    display: table-cell;
+    padding: .95rem 1rem;
+    border-bottom: 1px solid var(--dline);
+    vertical-align: top;
+  }
+  .sec__table[data-astro-cid-xdski4nv] thead[data-astro-cid-xdski4nv] th[data-astro-cid-xdski4nv] {
+    font-family: var(--mono);
+    font-size: .74rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    color: var(--dmuted);
+    text-align: left;
+    border-bottom: 1px solid var(--gold);
+  }
+  .sec__table[data-astro-cid-xdski4nv] thead[data-astro-cid-xdski4nv] th[data-astro-cid-xdski4nv] span[data-astro-cid-xdski4nv] {
+    display: inline-block;
+    margin-left: .4em;
+    color: var(--gold);
+    border: 1px solid color-mix(in srgb,var(--gold) 40%,transparent);
+    border-radius: 4px;
+    padding: 0 .4em;
+    font-size: .7em;
+  }
+  .sec__table[data-astro-cid-xdski4nv] th[data-astro-cid-xdski4nv][scope=row] {
+    display: table-cell;
+    font-size: var(--step-0);
+    margin: 0;
+  }
+  .sec__table[data-astro-cid-xdski4nv] td[data-astro-cid-xdski4nv] {
+    justify-content: flex-start;
+  }
+  .sec__table[data-astro-cid-xdski4nv] td[data-astro-cid-xdski4nv]:before {
+    display: none;
+  }
+  .sec__why[data-astro-cid-xdski4nv] {
+    border-top: 0;
+    margin-top: 0;
+    max-width: 34ch;
+  }
+}
+.porque__inner[data-astro-cid-byyu32ee] {
+  display: grid;
+  gap: clamp(2.5rem,5vw,4rem);
+}
+.porque__maxim[data-astro-cid-byyu32ee] {
+  margin: 1rem 0;
+}
+.porque__list[data-astro-cid-byyu32ee] {
+  list-style: none;
+  display: grid;
+  gap: 0;
+}
+.porque__item[data-astro-cid-byyu32ee] {
+  display: flex;
+  gap: 1.3rem;
+  padding: 1.7rem 0;
+  border-top: 1px solid var(--line);
+}
+.porque__item[data-astro-cid-byyu32ee]:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.porque__n[data-astro-cid-byyu32ee] {
+  font-family: var(--mono);
+  color: var(--oxblood);
+  font-size: var(--step-0);
+  flex: none;
+  padding-top: .2rem;
+}
+.porque__item[data-astro-cid-byyu32ee] h3[data-astro-cid-byyu32ee] {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+  margin-bottom: .5rem;
+}
+.porque__item[data-astro-cid-byyu32ee] p[data-astro-cid-byyu32ee] {
+  color: var(--muted);
+  max-width: 52ch;
+}
+@media (min-width:900px) {
+  .porque__inner[data-astro-cid-byyu32ee] {
+    grid-template-columns: .85fr 1.15fr;
+    align-items: start;
+  }
+  .porque__head[data-astro-cid-byyu32ee] {
+    position: sticky;
+    top: 6rem;
+  }
+}
+.contacto[data-astro-cid-xjughlio] {
+  text-align: center;
+}
+.contacto__inner[data-astro-cid-xjughlio] {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.contacto__title[data-astro-cid-xjughlio] {
+  font-size: var(--step-3);
+  margin: 1rem auto 1.2rem;
+  max-width: 16ch;
+}
+.contacto__lead[data-astro-cid-xjughlio] {
+  margin-inline: auto;
+}
+.contacto__cta[data-astro-cid-xjughlio] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .9rem;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+.contacto__mail[data-astro-cid-xjughlio] {
+  margin-top: 1.3rem;
+  font-size: var(--step-1);
+  font-family: var(--mono);
+}
+.contacto__mail[data-astro-cid-xjughlio] a[data-astro-cid-xjughlio] {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.contacto__maxim[data-astro-cid-xjughlio] {
+  margin-top: 2.5rem;
+}
+
+
+/* ==========================================================================
+   SECTION 2 of 3 - hand-written refinements
+   was: _astro/pretor-refine.css
+
+   Written by hand over the build output, and where the design has
+   actually been decided since. The numbered subsections below are its own.
+   ========================================================================== */
+
+/* ============================================================
+   Pretor — refinement layer
+   Loaded AFTER index.edUtr7Fi.css. Keeps both identities:
+   the Roman gravitas (cream / Cinzel / oxblood) and the AI
+   framework (warm ink / mono / gold). Only elevates: warmer
+   ink, real atmosphere, editorial cards, a tighter footer.
+   ============================================================ */
+/* ---- 1. Palette retune ------------------------------------ */
+:root {
+  /* warm the inks so gold reads as patina, not cold UI */
+  --black: #0c0a08;
+  --panel: #15110b;
+  --panel-2: #19140d;
+  --dline: #2a241a;
+  /* lift secondary text on dark for legibility + class */
+  --dmuted: #a89e8a;
+  --marble: #f0ebdf;
+  /* richer roman accents */
+  --gold: #cda455;
+  --gold-soft: #e3ca8f;
+  --oxblood: #6e2233;
+  --oxblood-soft: #8f3b4d;
+  /* warm the stone a touch and deepen the hairline */
+  --line: #d8cfba;
+  --stone-card: #fbf8f1;
+  --shadow: 22px 40px -28px rgba(40, 24, 12, .35);
+}
+/* ---- 2. Global atmosphere --------------------------------- */
+/* faint film grain across the whole page — tactile, premium */
+body[data-astro-cid-5hce7sga]::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 200;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+/* dark sections get depth instead of flat black */
+.section--dark {
+  position: relative;
+  background-color: var(--black);
+  background-image: radial-gradient(120% 80% at 50% -10%, rgba(205, 164, 85, .07), transparent 60%),
+    radial-gradient(90% 60% at 100% 0%, rgba(110, 34, 51, .10), transparent 55%);
+}
+/* a hairline gold seam where light meets dark, both directions */
+.section--dark + .section--stone,
+.section--dark + .section--stone-2,
+.section--stone + .section--dark,
+.section--stone-2 + .section--dark {
+  position: relative;
+}
+/* ---- 3. Navigation ---------------------------------------- */
+/* kill the muddy translucent grey: a crisp, confident ink band */
+.nav[data-astro-cid-dmqpwcec] {
+  background: color-mix(in srgb, var(--black) 86%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 20%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, #000 40%, transparent);
+}
+.nav[data-astro-cid-dmqpwcec][data-scrolled] {
+  background: color-mix(in srgb, var(--black) 94%, transparent);
+  box-shadow: 0 14px 50px -26px #000d;
+}
+.brand[data-astro-cid-dmqpwcec] {
+  letter-spacing: .34em;
+}
+.brand__tick[data-astro-cid-dmqpwcec] {
+  width: 3px;
+  background: linear-gradient(var(--gold-soft), var(--gold));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--gold) 60%, transparent);
+}
+/* ---- 4. Hero + diptych ------------------------------------ */
+.hero[data-astro-cid-bbe6dxrz] {
+  position: relative;
+  background: radial-gradient(80% 55% at 28% 12%, rgba(110, 34, 51, .06), transparent 60%),
+    var(--stone);
+}
+.eyebrow[data-astro-cid-bbe6dxrz],
+.hero__intro[data-astro-cid-bbe6dxrz] .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+}
+.hero__intro[data-astro-cid-bbe6dxrz] .eyebrow::before {
+  content: "";
+  width: 2.2em;
+  height: 1px;
+  background: var(--oxblood);
+  opacity: .7;
+}
+.hero__title[data-astro-cid-bbe6dxrz] {
+  letter-spacing: .015em;
+}
+/* diptych: make the two worlds feel deliberately paired */
+.hero__world--roman[data-astro-cid-bbe6dxrz] {
+  background: radial-gradient(90% 70% at 0% 0%, rgba(110, 34, 51, .06), transparent 60%),
+    var(--stone-2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+}
+.hero__world--ai[data-astro-cid-bbe6dxrz] {
+  background-color: var(--black);
+  background-image: radial-gradient(70% 60% at 78% 22%, rgba(205, 164, 85, .14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, .02), transparent 30%);
+}
+.hero__agents[data-astro-cid-bbe6dxrz] li {
+  align-items: baseline;
+}
+.hero__agents[data-astro-cid-bbe6dxrz] span {
+  color: var(--gold-soft);
+}
+.hero__seam[data-astro-cid-bbe6dxrz] {
+  background: linear-gradient(transparent, var(--gold), transparent) !important;
+  opacity: .8 !important;
+  width: 1px !important;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 55%, transparent);
+}
+/* ---- 5. Section heads (light) ----------------------------- */
+.section--stone .eyebrow,
+.section--stone-2 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .8em;
+}
+.section--stone .section-head .eyebrow::before,
+.section--stone-2 .section-head .eyebrow::before,
+.porque__head[data-astro-cid-byyu32ee] .eyebrow::before {
+  content: "";
+  width: 2.2em;
+  height: 1px;
+  background: currentColor;
+  opacity: .55;
+}
+/* ---- 6. Marco cards (light, roman numerals) --------------- */
+.marco__grid[data-astro-cid-z2ekr6xw] {
+  box-shadow: var(--shadow);
+}
+.marco__card[data-astro-cid-z2ekr6xw] {
+  position: relative;
+  transition: background .3s var(--ease), transform .3s var(--ease);
+}
+.marco__card[data-astro-cid-z2ekr6xw]:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+.marco__n[data-astro-cid-z2ekr6xw] {
+  display: inline-block;
+  font-size: 1.7rem;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+}
+/* ---- 7. Capability cards (dark) — editorial index --------- */
+.cap__grid[data-astro-cid-eq4gkk3n] {
+  counter-reset: cap;
+}
+.cap__card[data-astro-cid-eq4gkk3n] {
+  position: relative;
+  padding-top: clamp(1.3rem, 2.2vw, 1.7rem);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--gold) 4%, transparent), transparent 38%),
+    var(--panel);
+  overflow: hidden;
+}
+.cap__card[data-astro-cid-eq4gkk3n]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--gold), transparent);
+  opacity: 0;
+  transition: opacity .3s var(--ease);
+}
+.cap__card[data-astro-cid-eq4gkk3n]:hover::after {
+  opacity: .9;
+}
+.cap__card[data-astro-cid-eq4gkk3n]:hover {
+  border-color: color-mix(in srgb, var(--gold) 50%, transparent);
+}
+/* replace the lonely dot with an indexed header rule */
+.cap__dot[data-astro-cid-eq4gkk3n] {
+  counter-increment: cap;
+  width: auto;
+  height: auto;
+  margin-bottom: 1.2rem;
+  padding-bottom: .9rem;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  border-bottom: 1px solid var(--dline);
+  display: flex;
+  align-items: center;
+}
+.cap__dot[data-astro-cid-eq4gkk3n]::before {
+  content: counter(cap, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .12em;
+  color: var(--gold);
+}
+.cap__dot[data-astro-cid-eq4gkk3n]::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  margin-left: .9rem;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--gold) 40%, transparent), transparent);
+}
+.cap__body[data-astro-cid-eq4gkk3n] {
+  color: #c4bba8;
+}
+/* ---- 8. Agents -------------------------------------------- */
+.agents__grid[data-astro-cid-mrg5s34m] {
+  box-shadow: var(--shadow);
+}
+.agent--leader[data-astro-cid-mrg5s34m]::before {
+  background: radial-gradient(circle at 88% 0%, rgba(205, 164, 85, .28), transparent 58%) !important;
+}
+.agent__role[data-astro-cid-mrg5s34m] {
+  color: var(--oxblood);
+}
+/* ---- 9. Security ------------------------------------------ */
+.sec__promises[data-astro-cid-xdski4nv] {
+  box-shadow: var(--shadow);
+}
+.sec__promise[data-astro-cid-xdski4nv] p,
+.sec__layer[data-astro-cid-xdski4nv] p {
+  color: #b6ac98;
+}
+/* no check marks — let a slim gold rule mark each promise instead */
+.sec__check[data-astro-cid-xdski4nv] {
+  display: none;
+}
+.sec__promise[data-astro-cid-xdski4nv] {
+  border-top: 2px solid color-mix(in srgb, var(--gold) 40%, transparent);
+}
+.sec__promise[data-astro-cid-xdski4nv] h3[data-astro-cid-xdski4nv] {
+  margin-top: .2rem;
+}
+/* ---- 10. Por qué ------------------------------------------ */
+.porque__n[data-astro-cid-byyu32ee] {
+  font-variant-numeric: tabular-nums;
+}
+/* ---- 11. Contacto — a closing note, not a second hero ----- */
+.contacto[data-astro-cid-xjughlio] {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+.contacto__inner[data-astro-cid-xjughlio] {
+  max-width: 660px;
+}
+.contacto__title[data-astro-cid-xjughlio] {
+  font-size: clamp(1.7rem, 1.35rem + 1.3vw, 2.4rem);
+  max-width: 15ch;
+  margin: .7rem auto 1rem;
+}
+.contacto__lead[data-astro-cid-xjughlio] {
+  font-size: var(--step-0);
+}
+.contacto__cta[data-astro-cid-xjughlio] {
+  margin-top: 1.8rem;
+}
+.contacto__mail[data-astro-cid-xjughlio] {
+  font-size: var(--step-0);
+}
+.contacto__maxim[data-astro-cid-xjughlio] {
+  margin-top: 1.8rem;
+}
+/* ---- 12. Footer — one compact line ------------------------ */
+.footer[data-astro-cid-sz7xmlte] {
+  position: relative;
+  padding-block: clamp(1.6rem, 3vw, 2.2rem);
+  background: var(--panel);
+  border-top: 0;
+}
+/* a precise gold hairline divides contact from footer */
+.footer[data-astro-cid-sz7xmlte]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 55%, transparent) 25%, color-mix(in srgb, var(--gold) 55%, transparent) 75%, transparent);
+}
+.footer__inner[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem 1.6rem;
+}
+.footer__brand[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .4rem 1.1rem;
+}
+.footer__word[data-astro-cid-sz7xmlte] {
+  letter-spacing: .32em;
+  font-size: 1.05rem;
+}
+.footer__tag[data-astro-cid-sz7xmlte] {
+  color: var(--dmuted);
+  font-size: var(--step--1);
+}
+.footer__maxim[data-astro-cid-sz7xmlte] {
+  font-size: var(--step--1);
+}
+.footer__base[data-astro-cid-sz7xmlte] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .35rem 1.1rem;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  justify-content: flex-end;
+}
+/* ---- 14. Demo — un encargo por Telegram -------------------- */
+.demo .section-head {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.demo__chat {
+  max-width: 640px;
+  margin: 0;
+  background: var(--black);
+  border: 1px solid var(--dline);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.demo__bar {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .85rem 1.2rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--dline);
+}
+.demo__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-weight: 600;
+  color: var(--black);
+  background: linear-gradient(150deg, var(--gold-soft), var(--gold));
+}
+.demo__peer {
+  color: var(--marble);
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+.demo__status {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--gold);
+}
+.demo__scroll {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  background: radial-gradient(120% 90% at 85% 0%, rgba(205, 164, 85, .06), transparent 55%),
+    var(--black);
+}
+.demo__msg {
+  max-width: 88%;
+  padding: .8rem 1rem .6rem;
+  border-radius: 12px;
+  font-size: .92rem;
+  line-height: 1.55;
+}
+.demo__msg p {
+  margin: 0;
+}
+.demo__msg--in {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: var(--panel-2);
+  border: 1px solid var(--dline);
+  color: #d9d0bd;
+}
+.demo__msg--out {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background: color-mix(in srgb, var(--oxblood) 52%, var(--black));
+  color: var(--marble);
+}
+.demo__meta {
+  display: block;
+  margin-top: .3rem;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .06em;
+  color: color-mix(in srgb, var(--dmuted) 70%, transparent);
+}
+.demo__sys {
+  align-self: center;
+  margin: 0;
+  padding: .2rem .9rem;
+  border: 1px dashed color-mix(in srgb, var(--gold) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--gold);
+}
+.demo__doc {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-top: .7rem;
+  padding: .55rem .8rem;
+  border: 1px solid var(--dline);
+  border-radius: 10px;
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: #d9d0bd;
+}
+.demo__doc-ico {
+  padding: .3em .5em;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: 6px;
+  font-size: .62rem;
+  letter-spacing: .1em;
+  color: var(--gold);
+}
+.demo__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: .8rem;
+  padding-bottom: .3rem;
+}
+.demo__btn {
+  padding: .5em 1.1em;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gold) 50%, transparent);
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--gold-soft);
+}
+.demo__btn--ok {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+.demo__note {
+  max-width: 640px;
+  margin-top: 1.2rem;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+/* ---- 15. Founder — quién está detrás ----------------------- */
+.founder {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+.founder__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 2rem;
+  margin-top: 1.6rem;
+}
+.founder__links a {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .03em;
+  color: var(--oxblood);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+  padding-bottom: .2em;
+  transition: border-color .25s var(--ease), color .25s var(--ease);
+}
+.founder__links a:hover {
+  color: var(--oxblood-soft);
+  border-color: var(--oxblood-soft);
+}
+/* ---- 13. Buttons — a little more presence ----------------- */
+.btn[data-astro-cid-bbe6dxrz],
+.btn[data-astro-cid-xjughlio] {
+  letter-spacing: .04em;
+}
+.btn--primary {
+  box-shadow: 0 10px 26px -14px rgba(0, 0, 0, .55);
+}
+.section--dark .btn--primary {
+  box-shadow: 0 12px 30px -14px color-mix(in srgb, var(--gold) 65%, transparent);
+}
+.btn svg {
+  flex: none;
+}
+/* ---- 16. Demo: editorial split on wide screens ------------- */
+@media (min-width: 980px) {
+  .demo .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .demo .section-head {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+  .demo__chat {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+  .demo__note {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 1.6rem;
+  }
+}
+/* ---- 17. Demo: staggered conversation reveal ---------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .demo__chat .demo__scroll > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .55s var(--ease), transform .55s var(--ease);
+  }
+  .demo__chat.is-visible .demo__scroll > * {
+    opacity: 1;
+    transform: none;
+  }
+  .demo__chat.is-visible .demo__scroll > * {
+    transition-delay: var(--d, 0s);
+  }
+}
+/* ---- 18. Demo: Telegram authenticity ------------------------ */
+.demo__msg--in,
+.demo__msg--out {
+  position: relative;
+}
+.demo__msg--in::before,
+.demo__msg--out::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.demo__msg--in::before {
+  left: -7px;
+  border-width: 0 0 10px 8px;
+  border-color: transparent transparent var(--panel-2) transparent;
+}
+.demo__msg--out::before {
+  right: -7px;
+  border-width: 0 8px 10px 0;
+  border-color: transparent transparent color-mix(in srgb, var(--oxblood) 52%, var(--black)) transparent;
+}
+.demo__date {
+  border: 0;
+  background: color-mix(in srgb, var(--marble) 8%, transparent);
+  color: var(--dmuted);
+}
+/* ---- 19. Founder: portrait + editorial grid ----------------- */
+.founder__photo {
+  /* margins reserve room for the even outer frame */
+  margin: 13px 13px 1.9rem 13px;
+  position: relative;
+  max-width: 260px;
+}
+.founder__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  filter: sepia(.22) saturate(.85) contrast(1.03);
+}
+.founder__photo::after {
+  content: "";
+  position: absolute;
+  inset: -13px;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  border-radius: 4px;
+  pointer-events: none;
+}
+/* ---- 20. Global polish: seams, selection, focus ------------- */
+.section--stone,
+.section--stone-2 {
+  position: relative;
+}
+.section--stone + .section--dark::before,
+.section--stone-2 + .section--dark::before,
+.section--dark + .section--stone::before,
+.section--dark + .section--stone-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 40%, transparent) 25%, color-mix(in srgb, var(--gold) 40%, transparent) 75%, transparent);
+  pointer-events: none;
+}
+::selection {
+  background: var(--oxblood);
+  color: var(--marble);
+}
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+/* ---- 21. CTA: one gold primary everywhere -------------------- */
+.btn--primary {
+  background: var(--gold);
+  color: #16130b;
+}
+.btn--primary:hover {
+  background: var(--gold-soft);
+}
+/* ---- 22. Mark: Justitia emblem (nav, footer, hero) ------------ */
+.brand__mark,
+.footer__mark {
+  flex: none;
+  width: auto;
+}
+.brand__mark {
+  height: 26px;
+}
+.footer__mark {
+  height: 24px;
+  transform: translateY(2px);
+}
+.hero__mark {
+  display: none;
+}
+@media (min-width: 1280px) {
+  .hero__world--ai[data-astro-cid-bbe6dxrz] {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero__mark {
+    display: block;
+    position: absolute;
+    right: clamp(1.5rem, 4vw, 3.5rem);
+    top: 42%;
+    width: clamp(130px, 13vw, 190px);
+    height: auto;
+    opacity: .9;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero__mark {
+    animation: mark-fade 1.4s var(--ease) .3s both;
+  }
+}
+@keyframes mark-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .9;
+  }
+}
+/* ---- 23. Demo: typing indicator ------------------------------ */
+.demo__typing {
+  display: none;
+  /* hidden for noscript + reduced motion */
+  align-self: flex-start;
+  align-items: center;
+  gap: .35rem;
+  height: 2.4rem;
+  padding: .75rem .95rem;
+  border-radius: 12px;
+  border-bottom-left-radius: 4px;
+  background: var(--panel-2);
+  border: 1px solid var(--dline);
+  overflow: hidden;
+}
+.demo__typing i {
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: var(--dmuted);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .demo__chat.is-visible .demo__typing {
+    display: flex;
+    animation: demo-typing 1.5s var(--ease) var(--d, 0s) both;
+  }
+  .demo__chat.is-visible .demo__typing i {
+    animation: demo-dot .9s ease-in-out infinite;
+  }
+  .demo__chat.is-visible .demo__typing i:nth-child(2) {
+    animation-delay: .18s;
+  }
+  .demo__chat.is-visible .demo__typing i:nth-child(3) {
+    animation-delay: .36s;
+  }
+}
+@keyframes demo-typing {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+    height: 2.4rem;
+  }
+  12% {
+    opacity: 1;
+    transform: none;
+  }
+  78% {
+    opacity: 1;
+    height: 2.4rem;
+    padding-block: .75rem;
+    margin-top: 0;
+  }
+  90% {
+    opacity: 0;
+    height: 2.4rem;
+    padding-block: .75rem;
+    margin-top: 0;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    padding-block: 0;
+    margin-top: -.7rem;
+    border-width: 0;
+  }
+}
+@keyframes demo-dot {
+  0%, 100% {
+    opacity: .35;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+/* ---- 24. Proof: Cedap ---------------------------------------- */
+.proof {
+  padding-block: clamp(1.5rem, 3vw, 2.3rem);
+  border-top: 1px solid var(--line);
+}
+.proof__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem 1.6rem;
+}
+.proof__label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  color: var(--oxblood);
+  flex: none;
+}
+.proof__text {
+  font-size: var(--step-0);
+  color: var(--muted);
+  max-width: 58ch;
+}
+.proof__text a {
+  color: var(--ink);
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+  transition: border-color .25s var(--ease);
+}
+.proof__text a:hover {
+  border-color: var(--oxblood);
+}
+.proof__quote {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  color: var(--oxblood);
+}
+.proof__quote span {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+/* ---- 25. Cómo empieza + FAQ ---------------------------------- */
+.empezar__list {
+  list-style: none;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.empezar__step {
+  background: var(--stone-card);
+  padding: clamp(1.8rem, 3vw, 2.4rem);
+}
+.empezar__n {
+  font-family: var(--mono);
+  color: var(--oxblood);
+  font-size: var(--step-0);
+  display: inline-block;
+  padding-bottom: .35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 35%, transparent);
+}
+.empezar__step h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-1);
+  margin: .9rem 0 .6rem;
+  line-height: 1.2;
+}
+.empezar__step p {
+  color: var(--muted);
+  max-width: 42ch;
+}
+/* The steps are self-serve now, so step 01 carries the link that starts them. Without this the
+   global `a { color: inherit; text-decoration: none }` renders it as ordinary prose, which is the
+   same as not having put a link there. Matches .faq__body a, which solved this already. */
+.empezar__step a,
+.empezar__guide a {
+  color: var(--oxblood);
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+}
+.empezar__step a:hover,
+.empezar__guide a:hover {
+  border-color: var(--oxblood);
+}
+.empezar__guide {
+  margin-top: 1.6rem;
+  font-weight: 600;
+}
+@media (min-width: 880px) {
+  .empezar__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.faq {
+  margin-top: clamp(2.8rem, 6vw, 4.5rem);
+  max-width: 760px;
+}
+.faq .eyebrow {
+  display: inline-flex;
+}
+.faq__item {
+  margin-top: .8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--stone-card);
+}
+.faq .eyebrow + .faq__item {
+  margin-top: 1.2rem;
+}
+.faq__item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.3rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-0);
+  color: var(--ink);
+}
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+.faq__chev {
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--oxblood);
+  border-bottom: 1.5px solid var(--oxblood);
+  transform: rotate(45deg);
+  transition: transform .3s var(--ease);
+  flex: none;
+}
+.faq__item[open] .faq__chev {
+  transform: rotate(-135deg);
+}
+.faq__body {
+  padding: 0 1.3rem 1.2rem;
+}
+.faq__body p {
+  color: var(--muted);
+  font-size: var(--step-0);
+  max-width: 60ch;
+}
+.faq__body a {
+  color: var(--oxblood);
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+}
+/* ---- 26. Agent cards: trifecta access row -------------------- */
+.agent__access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: 1.1rem;
+  padding-top: .9rem;
+  border-top: 1px solid var(--line);
+}
+.acc {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .02em;
+  padding: .22em .65em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.acc--yes {
+  color: #8c3a3a;
+  background: color-mix(in srgb, #8c3a3a 10%, transparent);
+}
+.acc--no {
+  color: #33684a;
+  background: color-mix(in srgb, #33684a 10%, transparent);
+}
+.acc--partial {
+  color: #7a5b18;
+  background: color-mix(in srgb, #8a6a1f 12%, transparent);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .agent__access {
+  border-top-color: var(--dline);
+}
+.agent--leader[data-astro-cid-mrg5s34m] .acc--partial {
+  color: var(--gold-soft);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+/* ---- 27. Polish: founder crop, double rules ------------------ */
+.empezar + .founder {
+  border-top: 1px solid var(--line);
+}
+.founder__photo img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+.marco__grid[data-astro-cid-z2ekr6xw],
+.empezar__list {
+  outline: 1px solid color-mix(in srgb, var(--gold) 30%, transparent);
+  outline-offset: 5px;
+}
+/* ---- 29. Contacto: Justitia emblem --------------------------- */
+.contacto__emblem {
+  margin: 0 auto clamp(1.6rem, 4vw, 2.6rem);
+  width: clamp(130px, 30vw, 190px);
+}
+.contacto__emblem img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: .95;
+}
+/* ---- 28. Access chips: P/U/X tooltips ------------------------ */
+/* the cards clip overflow, so tooltips anchor to the chips row and
+   stay inside the card instead of hanging off each chip */
+.agent__access {
+  position: relative;
+}
+.acc[data-tip] {
+  cursor: help;
+}
+.acc[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  z-index: 6;
+  width: max-content;
+  max-width: min(230px, 100%);
+  padding: .6rem .8rem;
+  border-radius: var(--radius-sm);
+  background: var(--black);
+  color: var(--marble);
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  font-size: .7rem;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .2s var(--ease), visibility .2s var(--ease);
+  pointer-events: none;
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, .5);
+}
+.acc[data-tip]:hover::after,
+.acc[data-tip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+}
+/* ============================================================
+   12. Sections added for the tiers + accuracy pass (PRE-42)
+   Planes, the comparison against a general AI, pull quotes,
+   the standalone testimonial, and the bespoke-agents block.
+   ============================================================ */
+/* ---- 12.1 Hero: the meeting-to-escrito flow ----------------
+   The one thing the product does that nothing else does, moved
+   out of an FAQ at the bottom of the page and into the hero
+   (pedido 2026-08-11). Each step is a claim checked against
+   pretor-mastra: the whole recording is transcribed in chunks
+   (src/voice/transcribe-long.ts, wired into the intake), the
+   fuero is settled per meeting and the modelo comes from that
+   fuero's shelf, and nothing is delivered before the approval
+   gate suspends for the owner. Do not add a step this list
+   cannot point at. ---------------------------------------- */
+.hero__flow {
+  margin-top: 1.5rem;
+  max-width: 60ch;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.1rem;
+}
+.hero__flow-lead {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.35;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.hero__flow-steps {
+  margin: .9rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: flow;
+  display: grid;
+  gap: .55rem;
+}
+.hero__flow-steps li {
+  counter-increment: flow;
+  position: relative;
+  padding-left: 2.1rem;
+  font-size: var(--step--1);
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.hero__flow-steps li::before {
+  content: counter(flow);
+  position: absolute;
+  left: 0;
+  top: .05em;
+  width: 1.5rem;
+  font-family: var(--mono);
+  font-size: .78em;
+  text-align: center;
+  color: var(--gold);
+}
+.hero__flow-steps b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.hero__flow-foot {
+  margin: .9rem 0 0;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--gold);
+}
+/* ---- 12.1b Hero: the mobile-first line ---------------------
+   No gold rule here any more: the flow block above owns it, and
+   two bordered blocks stacked read as one broken box. --------- */
+.hero__mobile {
+  margin-top: 1.1rem;
+  max-width: 54ch;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.65;
+  color: var(--muted);
+}
+/* ---- 12.2 Pull quotes -------------------------------------- */
+.pullquote {
+  margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+  max-width: 60ch;
+  text-align: center;
+}
+.pullquote blockquote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-2);
+  line-height: 1.35;
+  letter-spacing: .005em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.pullquote figcaption {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+/* Colour follows the section it sits in, not a modifier class: the first
+   version hard-coded dark ink and went unreadable the moment a quote was
+   dropped into a dark section. */
+.section--dark .pullquote blockquote {
+  color: var(--marble);
+}
+.section--dark .pullquote figcaption {
+  color: var(--dmuted);
+}
+/* ---- 12.3 Standalone testimonial band ---------------------- */
+.testimonial {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  background: var(--stone-2);
+  border-block: 1px solid var(--line);
+}
+.testimonial__inner {
+  max-width: 62ch;
+  text-align: center;
+}
+.testimonial__quote {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 1.1rem + 1.3vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.testimonial__by {
+  margin-top: 1.2rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+/* ---- 12.4 Versus table ------------------------------------- */
+.versus__wrap {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--stone-card);
+  box-shadow: var(--shadow);
+}
+.versus__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--step-0);
+}
+.versus__table th,
+.versus__table td {
+  padding: .95rem 1.1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.versus__table tbody tr:last-child th,
+.versus__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.versus__table thead th {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--stone-2);
+}
+.versus__table tbody th {
+  font-weight: 600;
+  color: var(--ink);
+  width: 22%;
+}
+.versus__table td {
+  color: var(--muted);
+}
+.versus__ours {
+  color: var(--ink) !important;
+  background: color-mix(in srgb, var(--gold) 9%, transparent);
+  font-weight: 500;
+}
+@media (max-width: 700px) {
+  .versus__table thead {
+    display: none;
+  }
+  .versus__table tr {
+    display: block;
+    border-bottom: 1px solid var(--line);
+  }
+  .versus__table tbody tr:last-child {
+    border-bottom: 0;
+  }
+  .versus__table th,
+  .versus__table td {
+    display: block;
+    width: auto;
+    border-bottom: 0;
+    padding: .5rem 1rem;
+  }
+  .versus__table tbody th {
+    padding-top: 1rem;
+    font-family: var(--serif);
+    font-size: var(--step-1);
+  }
+  .versus__table td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: var(--mono);
+    font-size: .68rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: .2rem;
+  }
+  .versus__ours {
+    border-radius: var(--radius-sm);
+    margin: 0 .5rem .8rem;
+  }
+}
+/* ---- 12.5 Planes ------------------------------------------- */
+.planes__promo {
+  margin-top: 2rem;
+  padding: .85rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--gold) 8%, transparent);
+  color: var(--marble);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  line-height: 1.6;
+}
+.planes__promo a {
+  color: var(--gold-soft);
+}
+.planes__grid {
+  list-style: none;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .planes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1040px) {
+  .planes__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.plan {
+  display: flex;
+  flex-direction: column;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid var(--dline);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.plan--featured {
+  border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+  background: var(--panel-2);
+  box-shadow: 0 24px 50px -30px rgba(205, 164, 85, .45);
+}
+.plan__name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  color: var(--marble);
+  letter-spacing: .02em;
+}
+.plan__price {
+  margin: .5rem 0 0;
+  font-family: var(--mono);
+  font-size: var(--step-2);
+  color: var(--gold);
+  line-height: 1.1;
+}
+.plan__per {
+  font-size: var(--step--1);
+  color: var(--dmuted);
+  letter-spacing: .02em;
+}
+.plan__includes {
+  margin: .9rem 0 0;
+  font-size: var(--step--1);
+  line-height: 1.6;
+  color: var(--marble);
+}
+.plan__list {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+  font-size: var(--step--1);
+  line-height: 1.55;
+  color: var(--dmuted);
+}
+.plan__list li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+.plan__list li::before {
+  content: "·";
+  position: absolute;
+  left: .25rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.plan__cta {
+  margin-top: auto;
+  justify-content: center;
+  text-align: center;
+}
+.planes__terms {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  gap: .9rem;
+  max-width: 72ch;
+  font-size: var(--step--1);
+  line-height: 1.7;
+  color: var(--dmuted);
+}
+.planes__terms a {
+  color: var(--gold-soft);
+}
+.planes__source {
+  color: var(--dmuted);
+  opacity: .8;
+}
+/* ---- 12.6 Agentes a medida --------------------------------- */
+.medida__example {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 1.5rem 1.6rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--oxblood);
+  border-radius: var(--radius);
+  background: var(--stone-card);
+  max-width: 68ch;
+}
+.medida__label {
+  margin: 0 0 .6rem;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.medida__text {
+  margin: 0;
+  font-size: var(--step-0);
+  line-height: 1.7;
+  color: var(--ink);
+}
+.medida__cta {
+  margin-top: 1.8rem;
+}
+/* ---- 12.7 The client's line above "Por qué Pretor" --------- */
+.porque__quote {
+  margin: 0 0 1.2rem;
+  font-family: var(--serif);
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.porque__quote span {
+  display: block;
+  margin-top: .5rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--muted);
+}
+/* ---- 12.8 Agent cards: tag pinned to the bottom ------------
+   The tag used to sit beside the name in a flex row. Once the tags
+   grew ("Único que lee clientes y honorarios") they wrapped, so a
+   tagged card had a two-line header and an untagged one had a
+   single line, and nothing below them lined up across the row.
+   The card is now a column: the body absorbs the slack, so the tag
+   and the P/U/X row sit on the same baseline in every card,
+   whether or not the card has a tag. */
+.agent[data-astro-cid-mrg5s34m] {
+  display: flex;
+  flex-direction: column;
+}
+.agent__body[data-astro-cid-mrg5s34m] {
+  flex: 1 1 auto;
+}
+.agent__tag[data-astro-cid-mrg5s34m] {
+  align-self: flex-start;
+  margin-bottom: .9rem;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .agent__tag[data-astro-cid-mrg5s34m] {
+    white-space: normal;
+  }
+}
+/* ---- 12.9 Card copy is justified ---------------------------
+   Requested 2026-08-10: every card body reads as a justified
+   block. Hyphenation is not optional here: these columns are
+   narrow (one card is ~34ch), and justify without hyphens opens
+   rivers of white space between words. lang="es-AR" on <html>
+   gives the browser the Spanish patterns it needs.
+   Deliberately NOT justified: the FAQ answers (accordion prose,
+   not a card) and the plan cards (short list items, where
+   justify would stretch three-word lines). */
+.marco__body[data-astro-cid-z2ekr6xw],
+.cap__body[data-astro-cid-eq4gkk3n],
+.agent__body[data-astro-cid-mrg5s34m],
+.sec__promise[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv],
+.sec__layer[data-astro-cid-xdski4nv] p[data-astro-cid-xdski4nv] {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+/* ---- 12.10 Celular: nada de palabras sueltas colgando -------
+   Pedido 2026-08-10 ("que en celular no haya una palabra sobre
+   otra"). Medido a 320 y 390 px no hay solapamiento real de
+   cajas: lo que hay es texto apilado, líneas que terminan con
+   una sola palabra colgada. balance reparte los títulos en
+   líneas parejas; pretty evita la viuda de una palabra en los
+   cuerpos. Ambas degradan a nada en navegadores viejos.
+   En la lista de agentes del hero, el ancho fijo de la etiqueta
+   (8.5em) dejaba a la descripción sin lugar y la partía en dos
+   líneas: en pantalla angosta la etiqueta cede el ancho. */
+@media (max-width: 640px) {
+  .display,
+  .hero__world-title,
+  .marco__title,
+  .cap__title,
+  .agent__name,
+  .agent__role,
+  .agent__tag,
+  .plan__name,
+  .sec__promise h3,
+  .sec__layer h4,
+  .porque__item h3 {
+    text-wrap: balance;
+  }
+  .lead,
+  .marco__body,
+  .cap__body,
+  .agent__body,
+  .sec__promise p,
+  .sec__layer p,
+  .porque__item p,
+  .faq__body {
+    text-wrap: pretty;
+  }
+  .hero__agents[data-astro-cid-bbe6dxrz] b[data-astro-cid-bbe6dxrz] {
+    min-width: 0;
+    flex: none;
+  }
+}
+/* ---- 12.11 Quiénes están detrás: dos personas ---------------- */
+.founder__people {
+  display: grid;
+  gap: clamp(3rem, 7vw, 4rem);
+  margin: clamp(2rem, 4vw, 2.8rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.founder__person {
+  margin: 0;
+}
+.founder__name {
+  font-size: var(--step-2);
+  margin: 0;
+  text-wrap: balance;
+}
+.founder__role {
+  margin-top: .55rem;
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .03em;
+  color: var(--oxblood);
+}
+.founder__person .founder__bio {
+  margin-top: 1.1rem;
+}
+.founder__photo--jurista img {
+  object-position: 50% 50%;
+}
+@media (min-width: 900px) {
+  .founder__people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    /* retrato · nombre · rol · bio · enlaces, compartidos por las dos
+       columnas: los nombres largos no desalinean lo que viene abajo */
+    grid-template-rows: repeat(5, auto);
+    column-gap: clamp(2.4rem, 5vw, 4.5rem);
+    row-gap: 0;
+  }
+  .founder__person {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+  }
+  /* la fila la fija el nombre más largo: el más corto baja a apoyarse
+     en su rol, y el aire queda arriba en vez de partir el bloque */
+  .founder__name {
+    align-self: end;
+  }
+  .founder__photo {
+    align-self: end;
+  }
+}
+/* el subrayado del enlace sigue al texto, no a la altura de la fila */
+.founder__links {
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+
+/* ==========================================================================
+   SECTION 3 of 3 - the cinematic intro
+   was: _astro/pretor-intro.css
+
+   Styles the .prologo curtain reveal that _astro/pretor-intro.js injects.
+   The intro opts itself out under prefers-reduced-motion, Save-Data and
+   deep links, so none of this applies on those loads.
+   ========================================================================== */
+
+/* ============================================================
+   Pretor — prólogo cinematográfico (curtains + arch + forum)
+   Markup is injected by pretor-intro.js only when appropriate
+   (no reduced-motion, not seen this session, images preloaded).
+   ============================================================ */
+html {
+  scrollbar-gutter: stable;
+}
+.prologo {
+  position: relative;
+  height: 300vh;
+  margin-bottom: -100vh;
+  /* hero rises under the stage during the final dissolve */
+  z-index: 150;
+  pointer-events: none;
+}
+.prologo.is-done {
+  pointer-events: none;
+}
+.prologo__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #0c0a08;
+  pointer-events: auto;
+  cursor: default;
+}
+.prologo.is-done .prologo__stage {
+  pointer-events: none;
+}
+.prologo__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform, opacity;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.prologo.is-ready .prologo__layer {
+  opacity: 1;
+}
+.prologo__world {
+  background-image: url(/_astro/intro/world.webp);
+}
+.prologo__dust {
+  background-image: url(/_astro/intro/dust.webp);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  animation: prologoDeriva 38s ease-in-out infinite alternate;
+}
+.prologo.is-ready .prologo__dust {
+  opacity: .2;
+}
+.prologo__curtain {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50vw;
+  background-size: 100% 100%;
+  will-change: transform;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+.prologo.is-ready .prologo__curtain {
+  opacity: 1;
+}
+.prologo__curtain--l {
+  left: 0;
+  background-image: url(/_astro/intro/curtain-l.webp);
+}
+.prologo__curtain--r {
+  right: 0;
+  background-image: url(/_astro/intro/curtain-r.webp);
+}
+/* loader: gold mark pulsing on near-black while assets decode */
+.prologo__carga {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: opacity .6s ease;
+}
+.prologo.is-ready .prologo__carga {
+  opacity: 0;
+}
+.prologo__carga img {
+  width: 44px;
+  height: auto;
+  mix-blend-mode: lighten;
+  animation: prologoPulso 1.6s ease-in-out infinite;
+}
+.prologo__carga span {
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: .34em;
+  color: #cda455;
+}
+/* scene 2: inside the forum */
+.prologo__lema {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  padding: 0 24px;
+  opacity: 0;
+  background: radial-gradient(ellipse 78% 62% at 50% 52%, rgba(12, 10, 8, .78), rgba(12, 10, 8, .32) 58%, transparent 80%);
+}
+.prologo__lema h2 {
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: clamp(30px, 5vw, 64px);
+  letter-spacing: .08em;
+  line-height: 1.12;
+  color: #e3ca8f;
+  text-shadow: 0 1px 6px rgba(12, 10, 8, .9), 0 2px 30px rgba(12, 10, 8, .85);
+  margin: 0;
+}
+.prologo__lema p {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 1.4vw, 19px);
+  letter-spacing: .02em;
+  color: rgba(240, 235, 223, .88);
+  text-shadow: 0 1px 14px rgba(12, 10, 8, .8);
+  max-width: 480px;
+  margin: 0;
+}
+/* scroll cue */
+.prologo__cue {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: #e6cf97;
+  text-shadow: 0 1px 10px rgba(12, 10, 8, .95), 0 0 26px rgba(12, 10, 8, .7);
+  transition: opacity .4s ease;
+}
+.prologo__cue svg {
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(205, 164, 85, .75);
+  border-radius: 50%;
+  padding: 9px;
+  box-shadow: 0 0 20px rgba(205, 164, 85, .28), inset 0 0 12px rgba(205, 164, 85, .12);
+  animation: prologoBob 1.5s ease-in-out infinite;
+}
+/* skip */
+.prologo__saltar {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  appearance: none;
+  background: rgba(12, 10, 8, .4);
+  border: 1px solid rgba(205, 164, 85, .4);
+  border-radius: 999px;
+  color: rgba(227, 202, 143, .9);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: border-color .25s ease, color .25s ease, opacity .4s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.prologo__saltar:hover,
+.prologo__saltar:focus-visible {
+  border-color: #cda455;
+  color: #e3ca8f;
+}
+/* mobile variant: fixed overlay, curtains part over the hero itself */
+.prologo--movil {
+  position: fixed;
+  inset: 0;
+  height: auto;
+  margin: 0;
+  z-index: 150;
+  pointer-events: auto;
+  background: transparent;
+  transition: opacity .5s ease;
+}
+.prologo--movil .prologo__world {
+  position: absolute;
+  inset: 0;
+  background: #0c0a08 url(/_astro/intro/world.webp) center / cover no-repeat;
+  animation: prologoZoomM 5s ease-out forwards;
+}
+.prologo--movil .prologo__lema {
+  transition: opacity .8s ease;
+}
+.prologo--movil.is-lema .prologo__lema {
+  opacity: 1;
+}
+.prologo--movil .prologo__curtain {
+  width: 62vw;
+  background-size: cover;
+  opacity: 1;
+  transition: transform 1.7s cubic-bezier(.22, 1, .36, 1);
+}
+.prologo--movil .prologo__curtain--l {
+  background-position: right center;
+}
+.prologo--movil .prologo__curtain--r {
+  background-position: left center;
+}
+.prologo--movil.is-open .prologo__curtain--l {
+  transform: translateX(-108%);
+}
+.prologo--movil.is-open .prologo__curtain--r {
+  transform: translateX(108%);
+}
+.prologo--movil.is-out {
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes prologoBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+@keyframes prologoPulso {
+  0%, 100% {
+    opacity: .55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes prologoDeriva {
+  from {
+    transform: translate3d(-2.5%, -1.5%, 0) scale(1.08);
+  }
+  to {
+    transform: translate3d(2.5%, 1.5%, 0) scale(1.14);
+  }
+}
+@keyframes prologoZoomM {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
