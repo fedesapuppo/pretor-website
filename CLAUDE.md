@@ -2,18 +2,25 @@
 
 ## There is no Astro source
 
-`index.html` is compiled Astro output (`data-astro-cid-*` attributes,
-minified inline scripts). The source project was never committed and is
-gone. Do not try to "regenerate" the page or set up an Astro build to
-match it: edit `index.html` and the CSS in `_astro/` directly.
+`index.html` is compiled Astro output (`data-astro-cid-*` attributes).
+The source project was never committed and is gone. Do not try to
+"regenerate" the page or set up an Astro build to match it: edit
+`index.html` and the CSS in `_astro/` directly. Both are formatted as
+readable source, and they are the source. Keep them readable: the page
+shipped minified until PRE-85, and a change to a 17KB line cannot be
+reviewed.
 
-The stylesheets load in this order and later ones override earlier ones:
+There are two stylesheets, and only one of them holds design rules:
 
-1. `_astro/index.edUtr7Fi.css` — the original Astro build output
-2. `_astro/pretor-refine.css` — hand-written refinements
-3. `_astro/pretor-intro.css` — the curtain-reveal intro
+1. `_astro/fonts.css` — `@font-face` only, paired with the `<link
+   rel="preload">` tags in the head
+2. `_astro/pretor.css` — everything else, in cascade order
 
-Put new rules in `pretor-refine.css` unless they belong to the intro.
+`pretor.css` is one file in three clearly marked sections, in the order
+the three old sheets used to load: the compiled Astro build, then the
+hand-written refinements over it, then the intro. Later sections still
+override earlier ones, so put a new rule in section 2 unless it belongs
+to the intro, and never reorder the sections.
 
 ## Asset paths are root-absolute
 

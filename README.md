@@ -27,9 +27,9 @@ old location now redirects here.
 
 The Astro source was never committed and no longer exists. What ships here
 is the compiled output: `index.html` is generated markup with
-`data-astro-cid-*` attributes, and the CSS in `_astro/` is a mix of the
-Astro build (`index.edUtr7Fi.css`) and hand-written overrides
-(`pretor-refine.css`, `pretor-intro.css`). Edit those files directly.
+`data-astro-cid-*` attributes, and `_astro/pretor.css` carries the Astro
+build together with the hand-written overrides that were layered on it.
+Both are formatted as readable source and are edited directly.
 
 ## Deployment
 
