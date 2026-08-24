@@ -1824,5 +1824,30 @@
       } else t.forEach((e) => e.classList.add("is-visible"));
     </script>
     <script type="module" src="/_astro/pretor-intro.js"></script>
+    <!--
+      Cloudflare Web Analytics. Installed by hand, on purpose.
+
+      This site used auto-install, where Cloudflare injects the beacon at the
+      edge. That only works while the zone is proxied, and pretor.ar's four A
+      records were set to DNS-only on 2026-07-31, so the injection stopped that
+      day and the site has had no analytics since. Measured on 2026-08-24:
+      Cloudflare recorded 35 to 65 pageviews a day up to 07-31 and 0 to 2
+      afterwards, with whole weeks missing.
+
+      The records stay DNS-only. app.pretor.ar needs that for the ACME HTTP-01
+      challenge (see pretor-rails/Caddyfile), and GitHub Pages serves this file
+      directly, so a manual beacon is the only thing that survives both. If the
+      proxy is ever turned back on, set auto_install to false in the Web
+      Analytics site record or the beacon lands twice and every count doubles.
+
+      Cookieless and no fingerprinting, so it needs no consent banner. It is
+      client-side, so an ad blocker hides that visit; the server-side numbers
+      for app.pretor.ar remain the ones to trust for signups.
+    -->
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "8ed6c8cf4c084ee1b2ba071d2ee9e322"}'
+    ></script>
   </body>
 </html>
