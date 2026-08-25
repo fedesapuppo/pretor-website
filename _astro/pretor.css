@@ -2654,6 +2654,164 @@ summary:focus-visible {
 }
 
 
+/* ---- 16. Legal — privacidad y términos --------------------- */
+/* Las dos páginas legales (/privacidad/, /terminos/) cargan esta misma
+   hoja y reutilizan .wrap, .section--stone, .eyebrow, .display, .lead y
+   el footer, para lo cual copian los atributos data-astro-cid-* que esos
+   selectores exigen. Lo único propio es la prosa larga: la portada no
+   tiene ninguna, así que no había nada que reusar. */
+.legal-nav {
+  background: var(--black);
+  border-bottom: 1px solid var(--dline);
+}
+.legal-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  color: var(--marble);
+}
+.legal-nav__back {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  letter-spacing: .04em;
+  color: var(--gold);
+  border-bottom: 1px solid transparent;
+}
+.legal-nav__back:hover {
+  border-bottom-color: var(--gold);
+}
+.legal__inner {
+  max-width: 74ch;
+  margin-inline: auto;
+}
+.legal h1.display {
+  margin-top: .8rem;
+  font-size: var(--step-3);
+}
+.legal .lead {
+  margin-top: 1.4rem;
+  max-width: none;
+}
+.legal__stamp {
+  margin-top: 1.6rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.legal__block {
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+}
+.legal__block h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-2);
+  line-height: 1.18;
+  letter-spacing: .01em;
+  margin-bottom: 1.1rem;
+}
+.legal__block p + p,
+.legal__block ul + p,
+.legal__block p + ul,
+.legal__block p + div {
+  margin-top: 1.1rem;
+}
+.legal__block strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.legal__block a {
+  color: var(--oxblood);
+  border-bottom: 1px solid rgba(107, 39, 55, .3);
+}
+.legal__block a:hover {
+  border-bottom-color: var(--oxblood);
+}
+.legal__list {
+  list-style: none;
+  display: grid;
+  gap: .8rem;
+}
+.legal__list li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.legal__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .68em;
+  width: .5rem;
+  height: 1px;
+  background: var(--oxblood);
+}
+/* Una cita textual de la ley: se lee como transcripción, no como
+   nuestra voz. */
+.legal__quote {
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  background: var(--stone-card);
+  border-left: 2px solid var(--oxblood);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+/* La tabla desborda en teléfono; scrollea dentro de su caja y nunca
+   empuja el ancho de la página. */
+.legal__table-wrap {
+  margin-top: 1.4rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--stone-card);
+}
+.legal__table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+  text-align: left;
+}
+.legal__table th,
+.legal__table td {
+  padding: .8rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+.legal__table tbody tr:last-child th,
+.legal__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+.legal__table thead th {
+  font-family: var(--mono);
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  white-space: nowrap;
+}
+.legal__table tbody th {
+  font-weight: 600;
+  color: var(--ink);
+}
+.legal__table td {
+  color: var(--muted);
+}
+.footer__legal {
+  display: flex;
+  gap: 1.1rem;
+}
+.footer__legal a {
+  border-bottom: 1px solid transparent;
+}
+.footer__legal a:hover {
+  border-bottom-color: currentColor;
+}
+
 /* ==========================================================================
    SECTION 3 of 3 - the cinematic intro
    was: _astro/pretor-intro.css

@@ -6,9 +6,9 @@ Live at [pretor.ar](https://pretor.ar/).
 
 ## What this repo is
 
-Static site: a single `index.html` plus assets under `_astro/`. No build
-step, no dependencies. Open `index.html` in a browser, or serve the
-directory:
+Static site: `index.html`, the two legal pages (`privacidad/index.html`
+and `terminos/index.html`), and assets under `_astro/`. No build step, no
+dependencies. Open `index.html` in a browser, or serve the directory:
 
 ```bash
 python3 -m http.server 4321

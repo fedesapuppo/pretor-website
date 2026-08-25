@@ -22,6 +22,38 @@ hand-written refinements over it, then the intro. Later sections still
 override earlier ones, so put a new rule in section 2 unless it belongs
 to the intro, and never reorder the sections.
 
+## The legal pages
+
+`privacidad/index.html` and `terminos/index.html` are hand-written, not
+Astro output, and they are the only other pages here. Three things point
+at them and each one breaks differently if a URL moves, so the paths
+`/privacidad/` and `/terminos/` are fixed:
+
+1. the footer of `index.html`
+2. the sign-up form at `app.pretor.ar` (`pretor-rails`,
+   `app/views/registrations/new.html.erb`), whose spec asserts both
+   absolute URLs, because the terms claim that creating the account
+   accepts them
+3. the Terms of service URL and Privacy statement URL fields of the Entra
+   application registration, which is what stops the Outlook consent
+   screen from saying "the publisher has not provided links to their
+   terms"
+
+They load `fonts.css` and `pretor.css` like the landing page and reuse
+`.wrap`, `.section--stone`, `.eyebrow`, `.display`, `.lead` and the whole
+footer. Those last selectors are attribute-scoped, so the legal pages
+copy the `data-astro-cid-*` values the stylesheet matches on. That is not
+a mistake to clean up: the attributes ARE the selectors. Their own rules
+are section 2's subsection 16 (`.legal*`), not a third stylesheet.
+
+The facts in them are checked against code the same way `#seguridad` is:
+the proveedores table against what `src/` actually calls, and the
+retention section against
+`pretor-mastra/docs/plans/2026-08-21-tenant-lifecycle.md`, including its
+thirty-day observability exception. Do not soften that exception; a
+policy that claims total erasure while the spans still hold case text is
+worse than one that bounds the gap.
+
 ## Asset paths are root-absolute
 
 Everything references `/_astro/...` and `/favicon.png`. The site is served
