@@ -1541,12 +1541,24 @@
 
             The WhatsApp number here is PRETOR's own, not the sales number in #contacto below. Those
             are two different conversations and both belong on the page.
+
+            The lead says "le sigue el hilo" rather than "lo ve en el otro", and the difference is
+            what the code does. A bound phone maps onto the memory resource the lawyer already has
+            (pretor-mastra src/tenancy/wa-binding.ts, src/whatsapp/turn.ts), so both channels land
+            on the same thread and Pretor carries the case, the history and the active expediente
+            across them. Nothing MIRRORS: no message is copied between the apps, and a reply goes
+            back on the channel it arrived on (deliveryFor, src/telegram/background-tasks.ts), so a
+            lawyer who wrote on Telegram and then opened WhatsApp finds an empty chat there. The
+            browser is the one surface that literally shows every message whatever channel it came
+            in on, because /historial reads the thread itself.
           -->
           <div class="canales reveal">
             <p class="eyebrow">Hablar con Pretor</p>
             <p class="canales__lead">
-              Pretor contesta en los dos, y la conversación es la misma: lo que le escribe por uno
-              lo ve en el otro. No lo busque por nombre, hay otros bots que se llaman parecido.
+              Pretor contesta en los dos y le sigue el hilo: lo que le cuenta por uno lo tiene
+              presente cuando le escribe por el otro. Los mensajes no se copian de una app a la
+              otra; la conversación entera la ve en el navegador. No lo busque por nombre, hay
+              otros bots que se llaman parecido.
             </p>
             <ul class="canales__list">
               <li class="canal">

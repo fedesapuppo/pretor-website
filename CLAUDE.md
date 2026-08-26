@@ -110,3 +110,14 @@ every P/U/X cell, `src/system/today.ts`, `normas.ts`, `articulos.ts`,
 Before editing any of them, open the file. Do not add a claim about a
 certification, an audit, a compliance standard or a vendor's training
 policy: none of those is ours to make, and none is checkable here.
+
+Two things in the legal text that look like omissions but are decisions, verified against official sources:
+
+- The policy deliberately OMITS the "free access at intervals of no less than six months" clause.
+  Disposición DNPDP 10/2008 required it; Resolución AAIP 14/2018 repealed that requirement, and
+  today only the Data Protection Authority clause is mandated, which the policy does carry.
+  Point 8 instead states that we do not charge and do not invoke that interval. Do not restore the
+  clause as if it were still mandatory.
+- The terms deliberately omit a waiver of every other forum. This is an adhesion contract
+  (art. 984 CCyC), and art. 988 inc. b renders clauses restricting the adherent's rights void,
+  whether or not Ley 24.240 is at stake. Point 11 expressly yields to art. 1109 CCyC.
