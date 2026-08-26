@@ -121,3 +121,9 @@ Two things in the legal text that look like omissions but are decisions, verifie
 - The terms deliberately omit a waiver of every other forum. This is an adhesion contract
   (art. 984 CCyC), and art. 988 inc. b renders clauses restricting the adherent's rights void,
   whether or not Ley 24.240 is at stake. Point 11 expressly yields to art. 1109 CCyC.
+
+## Language
+
+Only user-facing page copy is Spanish. Commit messages, this file and any other
+agent-facing notes are English, always. Decided 2026-08-26 after the same
+mistake had to be filtered out of pretor-mastra's git history.
