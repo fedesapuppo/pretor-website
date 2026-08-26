@@ -541,7 +541,7 @@
                   class="acc acc--partial"
                   tabindex="0"
                   data-tip="X = Canal de salida. Si el agente puede enviar información hacia afuera del estudio."
-                  >X · Indirecto</span
+                  >X · Con aprobación</span
                 >
               </div>
             </li>
@@ -761,7 +761,7 @@
                   class="acc acc--partial"
                   tabindex="0"
                   data-tip="P = Datos privados. Qué información del estudio puede leer este agente (expedientes, correo, agenda)."
-                  >P · Agenda</span
+                  >P · Agenda y correo</span
                 ><span
                   class="acc acc--yes"
                   tabindex="0"
@@ -771,7 +771,7 @@
                   class="acc acc--partial"
                   tabindex="0"
                   data-tip="X = Canal de salida. Si el agente puede enviar información hacia afuera del estudio."
-                  >X · Con aprobación</span
+                  >X · No</span
                 >
               </div>
             </li>
@@ -1025,9 +1025,10 @@
               <span class="sec__check" aria-hidden="true" data-astro-cid-xdski4nv>✓</span>
               <h3 data-astro-cid-xdski4nv>Cada dato privado tiene un solo lector</h3>
               <p data-astro-cid-xdski4nv>
-                Los documentos del caso, el expediente, y los clientes y honorarios los lee un
-                agente distinto cada uno, y ninguno de los tres puede enviar nada hacia afuera. No
-                es una convención: es una prueba automática que corre en cada cambio.
+                Los documentos del caso, el expediente, los clientes y honorarios, y el correo y la
+                agenda del abogado los lee un agente distinto cada uno, y ninguno de ellos tiene por
+                dónde enviar nada hacia afuera. No es una convención: es una prueba automática que
+                corre en cada cambio.
               </p>
             </li>
             <li class="sec__promise reveal" data-astro-cid-xdski4nv>
@@ -1112,10 +1113,11 @@
                         <span class="leg leg--partial" data-astro-cid-xdski4nv>Vía delegación</span>
                       </td>
                       <td data-label="Canal de salida (X)" data-astro-cid-xdski4nv>
-                        <span class="leg leg--partial" data-astro-cid-xdski4nv>Indirecto</span>
+                        <span class="leg leg--partial" data-astro-cid-xdski4nv>Con aprobación</span>
                       </td>
                       <td data-label="Por qué es seguro" class="sec__why" data-astro-cid-xdski4nv>
-                        Solo coordina; nunca trae datos crudos a su propio contexto.
+                        Coordina el equipo y concentra los envíos: nunca lee los documentos ni el
+                        correo, y cada envío espera su aprobación.
                       </td>
                     </tr>
                     <tr data-astro-cid-xdski4nv>
@@ -1211,16 +1213,17 @@
                     <tr data-astro-cid-xdski4nv>
                       <th scope="row" data-label="Agente" data-astro-cid-xdski4nv>Secretario</th>
                       <td data-label="Datos privados (P)" data-astro-cid-xdski4nv>
-                        <span class="leg leg--partial" data-astro-cid-xdski4nv>Agenda</span>
+                        <span class="leg leg--partial" data-astro-cid-xdski4nv>Agenda y correo</span>
                       </td>
                       <td data-label="Contenido externo (U)" data-astro-cid-xdski4nv>
                         <span class="leg leg--yes" data-astro-cid-xdski4nv>Sí</span>
                       </td>
                       <td data-label="Canal de salida (X)" data-astro-cid-xdski4nv>
-                        <span class="leg leg--partial" data-astro-cid-xdski4nv>Con aprobación</span>
+                        <span class="leg leg--no" data-astro-cid-xdski4nv>No</span>
                       </td>
                       <td data-label="Por qué es seguro" class="sec__why" data-astro-cid-xdski4nv>
-                        Su única salida pasa por el titular; no lee expedientes.
+                        Lee la agenda y el correo del abogado y no tiene canal de salida: los envíos
+                        los ejecuta Pretor, con su aprobación.
                       </td>
                     </tr>
                     <tr data-astro-cid-xdski4nv>
@@ -1662,10 +1665,11 @@
               <div class="faq__body">
                 <p>
                   Con arquitectura, no con promesas. Cada dato privado tiene un solo lector: los
-                  documentos del caso, el expediente, y los clientes y honorarios los lee un agente
-                  distinto cada uno, y ninguno de los tres tiene por dónde enviar nada hacia afuera.
-                  No es una convención del equipo: hay una prueba automática que lo verifica en cada
-                  cambio. El detalle está en la sección de <a href="#seguridad">seguridad</a>.
+                  documentos del caso, el expediente, los clientes y honorarios, y el correo y la
+                  agenda del abogado los lee un agente distinto cada uno, y ninguno de ellos tiene
+                  por dónde enviar nada hacia afuera. No es una convención del equipo: hay una
+                  prueba automática que lo verifica en cada cambio. El detalle está en la sección de
+                  <a href="#seguridad">seguridad</a>.
                 </p>
               </div>
             </details>
