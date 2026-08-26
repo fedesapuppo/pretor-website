@@ -463,7 +463,8 @@
               <span class="cap__dot" aria-hidden="true" data-astro-cid-eq4gkk3n></span>
               <h3 class="cap__title" data-astro-cid-eq4gkk3n>Reuniones</h3>
               <p class="cap__body" data-astro-cid-eq4gkk3n>
-                Graba, transcribe y resume: decisiones, responsables, plazos y citas textuales.
+                Usted graba la reunión; Pretor la transcribe y resume: decisiones, responsables,
+                plazos y citas textuales.
               </p>
             </li>
             <li class="cap__card reveal" data-astro-cid-eq4gkk3n>
@@ -781,11 +782,10 @@
               </div>
               <p class="agent__role" data-astro-cid-mrg5s34m>Clientes y redes</p>
               <p class="agent__body" data-astro-cid-mrg5s34m>
-                Gestiona consultas a través de redes sociales respondiendo en forma escrita u oral
-                (con personalización de voz de respuesta disponible). Notifica la necesidad de
-                intervención del usuario atento a la complejidad de la consulta. El servicio de
-                respuesta automatizada se requiere por separado. El comunicador nunca tiene acceso a
-                los datos privados del estudio.
+                Gestiona consultas a través de redes sociales y responde por escrito, con el tono
+                del estudio. Notifica la necesidad de intervención del usuario atento a la
+                complejidad de la consulta. El servicio de respuesta automatizada se requiere por
+                separado. El comunicador nunca tiene acceso a los datos privados del estudio.
               </p>
               <span class="agent__tag" data-astro-cid-mrg5s34m
                 >Servicio aislado · se activa con usted</span
@@ -1439,7 +1439,12 @@
                   Posibilidad de contratar recepcionista, administración de Instagram y otros
                   servicios particulares, con soporte personalizado
                 </li>
-                <li>Posibilidad de cargar la voz que quiera (o la suya propia) a Pretor</li>
+                <!--
+                  The custom-voice bullet ("cargar la voz que quiera o la suya propia") lived here
+                  from 2026-08-10. PRE-97 (voz por firma) implements it but has not reached
+                  production as of 2026-08-26, and this page only states what is true today.
+                  Restore the bullet when the deploy lands.
+                -->
               </ul>
               <a class="btn btn--ghost plan__cta" href="https://app.pretor.ar/planes#plan-integral"
                 >Contratar Integral</a
@@ -1553,7 +1558,8 @@
             back on the channel it arrived on (deliveryFor, src/telegram/background-tasks.ts), so a
             lawyer who wrote on Telegram and then opened WhatsApp finds an empty chat there. The
             browser is the one surface that literally shows every message whatever channel it came
-            in on, because /historial reads the thread itself.
+            in on, because the conversation page reads the thread itself (/historial is the Telegram
+            command; in the browser the URL is the app root).
           -->
           <div class="canales reveal">
             <p class="eyebrow">Hablar con Pretor</p>
@@ -1709,9 +1715,10 @@
               <div class="faq__body">
                 <p>
                   Hoy sincronizamos con el Poder Judicial de la Nación (la consulta pública y el
-                  Portal de Gestión de Causas), la Provincia de Buenos Aires, la Ciudad de Buenos
-                  Aires, Entre Ríos y Córdoba. Si trabaja en otra, carga el expediente igual y usa
-                  todo lo demás; los movimientos los trae usted hasta que sumemos ese portal.
+                  Portal de Gestión de Causas), la Provincia de Buenos Aires, Entre Ríos y Córdoba,
+                  con las credenciales de su estudio donde el portal las pide. Si trabaja en otra,
+                  carga el expediente igual y usa todo lo demás; los movimientos los trae usted hasta
+                  que sumemos ese portal.
                 </p>
               </div>
             </details>
