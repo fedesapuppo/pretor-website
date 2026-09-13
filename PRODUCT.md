@@ -66,8 +66,9 @@ and each abono lasts 30 days from payment (CLAUDE.md, "The prices in index.html 
   `og.jpg`) and the Roman-law register: "Iura novit curia", "Dura lex, sed lex", "Fiat iustitia",
   "Lex antiqva, mens nova" (index.html, intro).
 - Spanish of Argentina, formal usted throughout.
-- The owner has named a minimalist black-and-white direction for the site, and ruled out adopting
-  a competitor's palette (PRE-85 task 4). Which competitor is not written down anywhere.
+- The palette on main stays. A black-and-white pass was built on 2026-09-12 and the owner reversed
+  it on 2026-09-13: it read as another legal product's site. The logo and the Justitia art change
+  later, under their own ticket.
 
 ## Evidence on Hand
 
