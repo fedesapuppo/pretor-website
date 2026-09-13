@@ -72,6 +72,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
 @media (prefers-reduced-motion:reduce) {
@@ -112,12 +113,6 @@ a {
 }
 .section {
   padding-block: var(--section-y);
-}
-section[id] {
-  scroll-margin-top: 5.5rem;
-}
-#top {
-  scroll-margin-top: 0;
 }
 .section--dark {
   background: var(--black);
@@ -505,7 +500,7 @@ section[id] {
   color: var(--stone);
   padding: .6rem 1rem;
   border-radius: var(--radius-sm);
-  z-index: 100;
+  z-index: 300;
   transition: top .2s var(--ease);
 }
 .skip-link[data-astro-cid-5hce7sga]:focus {
@@ -625,7 +620,7 @@ section[id] {
     bottom: 14%;
     left: 50%;
     width: 1px;
-    background: linear-gradient(transparent,var(--gold),transparent);
+    background: var(--gold);
     opacity: .6;
   }
 }
@@ -748,9 +743,9 @@ section[id] {
   font-size: var(--step-1);
 }
 .agent__tag[data-astro-cid-mrg5s34m] {
-  font-size: .68rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .02em;
+  text-transform: none;
   color: var(--oxblood);
   border: 1px solid color-mix(in srgb,var(--oxblood) 40%,transparent);
   border-radius: 999px;
@@ -884,7 +879,7 @@ section[id] {
 }
 .sec__explain[data-astro-cid-xdski4nv] {
   color: var(--dmuted);
-  max-width: 70ch;
+  max-width: 56ch;
 }
 .sec__explain[data-astro-cid-xdski4nv] b[data-astro-cid-xdski4nv] {
   color: var(--marble);
@@ -892,6 +887,7 @@ section[id] {
 }
 .sec__table-wrap[data-astro-cid-xdski4nv] {
   margin-top: 1.8rem;
+  overflow-x: auto;
 }
 .sec__table[data-astro-cid-xdski4nv] {
   width: 100%;
@@ -1211,7 +1207,7 @@ body[data-astro-cid-5hce7sga]::after {
 }
 .brand__tick[data-astro-cid-dmqpwcec] {
   width: 3px;
-  background: linear-gradient(var(--gold-soft), var(--gold));
+  background: var(--gold);
   box-shadow: 0 0 10px color-mix(in srgb, var(--gold) 60%, transparent);
 }
 /* ---- 4. Hero + diptych ------------------------------------ */
@@ -1254,7 +1250,7 @@ body[data-astro-cid-5hce7sga]::after {
   color: var(--gold-soft);
 }
 .hero__seam[data-astro-cid-bbe6dxrz] {
-  background: linear-gradient(transparent, var(--gold), transparent) !important;
+  background: var(--gold) !important;
   opacity: .8 !important;
   width: 1px !important;
   box-shadow: 0 0 14px color-mix(in srgb, var(--gold) 55%, transparent);
@@ -1311,7 +1307,7 @@ body[data-astro-cid-5hce7sga]::after {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(var(--gold), transparent);
+  background: var(--gold);
   opacity: 0;
   transition: opacity .3s var(--ease);
 }
@@ -1539,7 +1535,7 @@ body[data-astro-cid-5hce7sga]::after {
   margin-top: .3rem;
   text-align: right;
   font-family: var(--mono);
-  font-size: .62rem;
+  font-size: .72rem;
   letter-spacing: .06em;
   color: color-mix(in srgb, var(--dmuted) 70%, transparent);
 }
@@ -1572,7 +1568,7 @@ body[data-astro-cid-5hce7sga]::after {
   padding: .3em .5em;
   border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
   border-radius: 6px;
-  font-size: .62rem;
+  font-size: .72rem;
   letter-spacing: .1em;
   color: var(--gold);
 }
@@ -1745,7 +1741,7 @@ body[data-astro-cid-5hce7sga]::after {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--gold) 40%, transparent) 25%, color-mix(in srgb, var(--gold) 40%, transparent) 75%, transparent);
+  background: color-mix(in srgb, var(--gold) 40%, transparent);
   pointer-events: none;
 }
 ::selection {
@@ -1755,9 +1751,15 @@ body[data-astro-cid-5hce7sga]::after {
 a:focus-visible,
 button:focus-visible,
 summary:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--oxblood);
   outline-offset: 3px;
   border-radius: 2px;
+}
+.nav :focus-visible,
+.legal-nav :focus-visible,
+.agent--leader :focus-visible,
+.prologo :focus-visible {
+  outline-color: var(--gold);
 }
 /* ---- 21. CTA: one gold primary everywhere -------------------- */
 .btn--primary {
@@ -2093,7 +2095,7 @@ summary:focus-visible {
 }
 .acc {
   font-family: var(--mono);
-  font-size: .66rem;
+  font-size: .75rem;
   letter-spacing: .02em;
   padding: .22em .65em;
   border-radius: 999px;
@@ -2235,7 +2237,7 @@ summary:focus-visible {
   font-family: var(--mono);
   font-size: .78em;
   text-align: center;
-  color: var(--gold);
+  color: var(--oxblood);
 }
 .hero__flow-steps b {
   font-weight: 600;
@@ -2245,7 +2247,7 @@ summary:focus-visible {
   margin: .9rem 0 0;
   font-family: var(--mono);
   font-size: var(--step--1);
-  color: var(--gold);
+  color: var(--oxblood);
 }
 /* ---- 12.1b Hero: the mobile-first line ---------------------
    No gold rule here any more: the flow block above owns it, and
@@ -2380,6 +2382,7 @@ summary:focus-visible {
   }
   .versus__table tbody th {
     padding-top: 1rem;
+    width: auto;
     font-family: var(--serif);
     font-size: var(--step-1);
   }
@@ -2498,7 +2501,7 @@ summary:focus-visible {
   margin-top: clamp(2rem, 4vw, 3rem);
   display: grid;
   gap: .9rem;
-  max-width: 72ch;
+  max-width: 56ch;
   font-size: var(--step--1);
   line-height: 1.7;
   color: var(--dmuted);
@@ -2508,7 +2511,6 @@ summary:focus-visible {
 }
 .planes__source {
   color: var(--dmuted);
-  opacity: .8;
 }
 /* ---- 12.6 Agentes a medida --------------------------------- */
 .medida__example {
@@ -2724,7 +2726,7 @@ summary:focus-visible {
   border-bottom-color: var(--gold);
 }
 .legal__inner {
-  max-width: 74ch;
+  max-width: 64ch;
   margin-inline: auto;
 }
 .legal h1.display {

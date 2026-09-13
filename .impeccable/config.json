@@ -1,0 +1,79 @@
+{
+  "updateCheck": false,
+  "stalenessCheck": false,
+  "hook": {
+    "enabled": true
+  },
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html",
+          "privacidad/index.html",
+          "terminos/index.html"
+        ],
+        "createdAt": "2026-09-13T02:00:49.720Z",
+        "reason": "Agent, verified: file scans cannot see .wrap or clamp() padding; audit and critique of 9ac10f3 found every hit false, rendered scans report none of them"
+      },
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-09-13T02:00:49.735Z",
+        "reason": "User confirmed: Inter is the incumbent self-hosted body face on main, and the owner kept the main design on 2026-09-13"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T02:00:49.748Z",
+        "reason": "Agent: the one remaining hit is the 39-character hero eyebrow label; sentence-long tags were moved to sentence case, the label copy belongs to PRE-42"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "index.html",
+          "privacidad/index.html",
+          "terminos/index.html"
+        ],
+        "createdAt": "2026-09-13T17:27:28.872Z",
+        "reason": "User confirmed: the owner reverted to the main palette on 2026-09-13, cream stone and gold glows included; see DESIGN.md"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html",
+          "privacidad/index.html",
+          "terminos/index.html"
+        ],
+        "createdAt": "2026-09-13T17:27:28.898Z",
+        "reason": "User confirmed: the owner reverted to the main palette on 2026-09-13, cream stone and gold glows included; see DESIGN.md"
+      },
+      {
+        "rule": "gpt-thin-border-wide-shadow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T17:27:28.914Z",
+        "reason": "User confirmed: the owner reverted to the main palette on 2026-09-13, cream stone and gold glows included; see DESIGN.md. The featured plan's gold shadow"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-13T17:27:28.928Z",
+        "reason": "User confirmed: the owner reverted to the main palette on 2026-09-13, cream stone and gold glows included; see DESIGN.md. The oxblood left rule on the bespoke-agent example"
+      }
+    ]
+  }
+}

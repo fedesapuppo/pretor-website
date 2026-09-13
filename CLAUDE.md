@@ -22,6 +22,28 @@ hand-written refinements over it, then the intro. Later sections still
 override earlier ones, so put a new rule in section 2 unless it belongs
 to the intro, and never reorder the sections.
 
+## Design system and Impeccable
+
+`DESIGN.md` is the visual system and `PRODUCT.md` the product facts it
+serves. Read both before a visual change. Neither is deployed, and neither
+is `.impeccable/`: the rsync in `.github/workflows/deploy.yml` excludes
+them.
+
+Impeccable is vendored project-scope in `.claude/skills/impeccable/`, with
+its edit hook in `.claude/settings.json`. The 12MB engine binary is not
+committed. Fetch it once per worktree into the worktree, never into the
+home directory:
+
+```bash
+IMPECCABLE_HOME="$PWD/.impeccable/engine" .claude/skills/impeccable/scripts/impeccable engine-probe
+```
+
+Run every launcher command with that same `IMPECCABLE_HOME`, including
+`detect --json index.html privacidad/index.html terminos/index.html`.
+Every detector finding that stays is an ignore in `.impeccable/config.json`
+with its reason, added through `impeccable hooks ignore-value`, never by
+hand.
+
 ## The legal pages
 
 `privacidad/index.html` and `terminos/index.html` are hand-written, not

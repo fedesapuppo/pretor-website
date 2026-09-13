@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -d \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/bin\" ] || [ -d \"${CLAUDE_PROJECT_DIR}/.impeccable/engine/bin\" ] || exit 0; IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 5,
+            "statusMessage": "Checking UI changes"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -d \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/bin\" ] || [ -d \"${CLAUDE_PROJECT_DIR}/.impeccable/engine/bin\" ] || exit 0; IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 30,
+            "statusMessage": "Design deep pass"
+          }
+        ]
+      }
+    ]
+  }
+}
