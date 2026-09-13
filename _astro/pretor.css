@@ -875,7 +875,7 @@ a {
 }
 .sec__explain[data-astro-cid-xdski4nv] {
   color: var(--dmuted);
-  max-width: 70ch;
+  max-width: 56ch;
 }
 .sec__explain[data-astro-cid-xdski4nv] b[data-astro-cid-xdski4nv] {
   color: var(--marble);
@@ -2464,7 +2464,7 @@ summary:focus-visible {
   margin-top: clamp(2rem, 4vw, 3rem);
   display: grid;
   gap: .9rem;
-  max-width: 72ch;
+  max-width: 56ch;
   font-size: var(--step--1);
   line-height: 1.7;
   color: var(--dmuted);
@@ -2474,7 +2474,6 @@ summary:focus-visible {
 }
 .planes__source {
   color: var(--dmuted);
-  opacity: .8;
 }
 /* ---- 12.6 Agentes a medida --------------------------------- */
 .medida__example {
@@ -2689,7 +2688,7 @@ summary:focus-visible {
   border-bottom-color: var(--marble);
 }
 .legal__inner {
-  max-width: 74ch;
+  max-width: 64ch;
   margin-inline: auto;
 }
 .legal h1.display {
