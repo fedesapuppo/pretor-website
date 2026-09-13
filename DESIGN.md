@@ -2,19 +2,34 @@
 name: Pretor
 description: Marketing site and legal pages for Pretor, an AI system for Argentine law firms.
 colors:
-  stone: "#f5f5f5"
-  stone-2: "#ebebeb"
-  stone-card: "#ffffff"
-  ink: "#111111"
-  muted: "#4d4d4d"
-  line: "#d4d4d4"
-  black: "#0a0a0a"
-  panel: "#141414"
-  panel-2: "#1a1a1a"
-  dline: "#2b2b2b"
-  marble: "#f2f2f2"
-  dtext: "#cccccc"
-  dmuted: "#a3a3a3"
+  stone: "#f4f0e8"
+  stone-2: "#ece6d8"
+  stone-card: "#fbf8f1"
+  ink: "#1a1a1a"
+  muted: "#5b5852"
+  oxblood: "#6e2233"
+  oxblood-soft: "#8f3b4d"
+  line: "#d8cfba"
+  black: "#0c0a08"
+  panel: "#15110b"
+  panel-2: "#19140d"
+  dline: "#2a241a"
+  marble: "#f0ebdf"
+  dmuted: "#a89e8a"
+  gold: "#cda455"
+  gold-soft: "#e3ca8f"
+  button-ink: "#16130b"
+  dark-text-leader: "#d9d4c8"
+  dark-text-card: "#c4bba8"
+  dark-text-security: "#b6ac98"
+  dark-text-chat: "#d9d0bd"
+  qr-plate: "#ffffff"
+  status-partial-tint: "#8a6a1f"
+  status-yes: "#8c3a3a"
+  status-no: "#33684a"
+  status-partial: "#7a5b18"
+  status-yes-dark: "#e7a3a3"
+  status-no-dark: "#8fd6a8"
 typography:
   display:
     fontFamily: "Cinzel, Times New Roman, serif"
@@ -45,6 +60,7 @@ typography:
 rounded:
   photo: "2px"
   plate: "4px"
+  icon: "6px"
   sm: "8px"
   md: "12px"
   device: "16px"
@@ -55,27 +71,28 @@ spacing:
   max-width: "1180px"
 components:
   button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.stone}"
+    backgroundColor: "{colors.gold}"
+    textColor: "{colors.button-ink}"
     rounded: "{rounded.sm}"
     padding: ".85em 1.6em"
   button-primary-hover:
-    backgroundColor: "{colors.muted}"
-  button-primary-dark:
-    backgroundColor: "{colors.marble}"
-    textColor: "{colors.black}"
-    rounded: "{rounded.sm}"
-    padding: ".85em 1.6em"
+    backgroundColor: "{colors.gold-soft}"
   button-ghost:
     textColor: "{colors.ink}"
     rounded: "{rounded.sm}"
     padding: ".85em 1.6em"
+  button-ghost-dark:
+    textColor: "{colors.marble}"
+    rounded: "{rounded.sm}"
+    padding: ".85em 1.6em"
   access-chip-yes:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.stone}"
+    textColor: "{colors.status-yes}"
     rounded: "{rounded.pill}"
   access-chip-no:
-    textColor: "{colors.ink}"
+    textColor: "{colors.status-no}"
+    rounded: "{rounded.pill}"
+  access-chip-partial:
+    textColor: "{colors.status-partial}"
     rounded: "{rounded.pill}"
 ---
 
@@ -83,46 +100,60 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Printed Brief"**
+**Creative North Star: "Lex Antiqva, Mens Nova"**
 
-Black ink on white paper, and its negative on the dark bands. The site reads like a well-set legal
-document: a Roman capital face for the things that carry authority, a plain sans for the argument,
-a monospace for what the machine does. There is no brand colour. Hierarchy comes from size,
-weight, case, rules and the light-against-dark banding, never from hue. The one colour on the page
-is the gold Justitia emblem, a raster asset, which is why it reads as a seal.
+Two worlds on one page. The Roman one: warm stone paper, Cinzel capitals, oxblood accents, maxims in
+Latin. The machine one: warm near-black bands, Inter and JetBrains Mono, gold as patina. The page
+alternates them band by band, and the hero diptych sets them side by side. Gold carries the brand
+across both, from the Justitia emblem to the primary buttons.
 
-The owner set the black-and-white direction on this ticket (PRE-85) and ruled out borrowing a
-competitor's palette. Every value below is a neutral grey; nothing is tinted.
+This palette is an owner decision. A black-and-white pass was built on 2026-09-12 and reversed on
+2026-09-13 because it read as another legal product's site; the palette below is the one on main,
+kept as is. The logo and the Justitia art change later, under their own ticket, not here.
+
+Every value in this file is read from `_astro/pretor.css`. Section 1 of that sheet declares the
+tokens and section 2's "Palette retune" overrides most of them; the frontmatter lists the values
+that ship, which are the retuned ones.
 
 **Key Characteristics:**
-- Two grounds only: light (`stone`, `stone-2`, white cards) and dark (`black`, `panel`).
-- Meaning never rides on colour alone: state is fill, outline or dash.
-- Flat. One soft neutral shadow for raised grids; no glows, no gradients, no grain.
+- Light bands in warm stone with oxblood accents; dark bands in warm near-black with gold accents.
+- One gold primary button on every ground.
+- Atmosphere by design: faint film grain, soft radial glows on dark bands, gold hairline seams.
 - Self-hosted type: Cinzel, Inter, JetBrains Mono. No external asset.
 
 ## Colors
 
-A strict neutral scale, one ramp per ground.
+A warm two-ground palette: stone and oxblood, near-black and gold.
+
+### Primary
+- **Patina Gold** (`gold`): primary buttons, dark-band eyebrows and accents, plan prices, the focus ring on dark grounds.
+- **Soft Gold** (`gold-soft`): primary button hover, secondary accents on dark.
+
+### Secondary
+- **Oxblood** (`oxblood`): light-band eyebrows, the emphasised words of the h1, numerals, link text and underlines on light, the hero's trust lines and step numbers, the focus ring on light grounds.
+- **Soft Oxblood** (`oxblood-soft`): link hover on light.
 
 ### Neutral
-- **Paper** (`stone`): page ground of light sections and the legal pages.
-- **Paper Shade** (`stone-2`): the alternate light band, table heads.
-- **Sheet** (`stone-card`): cards, FAQ items, tables on light ground.
-- **Ink** (`ink`): text, primary buttons, rules that carry emphasis, the focus ring on light.
-- **Graphite** (`muted`): secondary text on light (7:1 on Paper Shade).
-- **Hairline** (`line`): borders and dividers on light.
-- **Night** (`black`): dark bands, nav, footer, the demo chat.
-- **Panel** (`panel`, `panel-2`): cards and bubbles on dark.
+- **Stone** (`stone`), **Stone Shade** (`stone-2`), **Card** (`stone-card`): light grounds and cards.
+- **Ink** (`ink`): text on light; the leader agent card's ground.
+- **Muted** (`muted`): secondary text on light.
+- **Hairline** (`line`): borders on light.
+- **Night** (`black`), **Panel** (`panel`, `panel-2`): dark grounds and cards.
 - **Dark Hairline** (`dline`): borders on dark.
-- **Chalk** (`marble`): text, primary buttons and the focus ring on dark.
-- **Soft Chalk** (`dtext`): long body text on dark cards.
-- **Ash** (`dmuted`): secondary text on dark (at least 6.9:1 on every dark ground).
+- **Marble** (`marble`): text on dark.
+- **Dark Muted** (`dmuted`): secondary text on dark.
+- **Button Ink** (`button-ink`): text on gold buttons.
+- **Warm Parchment greys** (`dark-text-leader`, `dark-text-card`, `dark-text-security`, `dark-text-chat`): body text on the leader card, capability cards, security promises and chat bubbles, each set as a literal in the CSS.
+- **QR Plate** (`qr-plate`): the white behind each QR code, so a camera can read it on any ground.
+
+### Status
+The P/U/X access chips and the trifecta table mark exposure by hue, always next to a text label
+("Sí", "No", "Transitorio"). Light cards use `status-yes`, `status-no` and `status-partial` on a
+10-12% tint of the same hue; the dark table uses `status-yes-dark`, `status-no-dark` and `gold-soft`.
 
 ### Named Rules
-**The No-Hue Rule.** No colour value outside this ramp. If something needs to stand out, give it
-weight, size, an ink fill or an outline.
-
-**The Seal Rule.** Gold exists only inside the emblem image. It is never a CSS value.
+**The Two Grounds Rule.** Gold text belongs on dark grounds, oxblood on light ones. Gold on stone
+measures 2.04:1 and fails; oxblood on stone measures 9.53:1.
 
 ## Typography
 
@@ -130,84 +161,73 @@ weight, size, an ink fill or an outline.
 **Body Font:** Inter (with system-ui)
 **Label/Mono Font:** JetBrains Mono (with ui-monospace)
 
-**Character:** Roman capitals for authority, a neutral grotesque for the argument, a monospace for
-the machine's own voice.
+**Character:** Roman capitals for authority on light bands, a neutral grotesque for the argument,
+a monospace for the machine's own voice on dark bands.
 
 ### Hierarchy
-- **Display** (500, `--step-4`, 1.08): the hero h1 only. Emphasis inside it is weight 600, not colour.
-- **Headline** (500, `--step-3`): h2 on light sections. Dark sections set h2 in Inter 600 instead.
-- **Title** (500, `--step-1`): card and step titles in Cinzel; capability and security titles in Inter 600.
-- **Body** (400, `--step-0`, 1.65): prose, capped at 56 to 74ch.
-- **Label** (`--step--1`, mono or tracked caps): eyebrows, captions, chips. Never below 0.72rem.
+- **Display** (500, `--step-4`, 1.08): the hero h1.
+- **Headline** (500, `--step-3`): h2 on light bands in Cinzel; dark bands set h2 in Inter 600.
+- **Title** (500, `--step-1`): card and step titles.
+- **Body** (400, `--step-0`, 1.65): prose. Measures: lead 56ch, trifecta explanation and plan terms 56ch, legal prose 64ch.
+- **Label** (`--step--1`): tracked uppercase eyebrows on light, mono eyebrows on dark.
 
 ### Named Rules
-**The 12px Floor Rule.** Functional text (chips, tags, timestamps) is at least 0.72rem. Sentence-long
-tags stay in sentence case; uppercase is for labels of a few words.
+**The 12px Floor Rule.** Functional text is at least 0.72rem: access chips and agent tags 0.75rem,
+demo timestamps and the document icon 0.72rem. Sentence-long agent tags are in sentence case.
 
 ## Layout
 
-A single 1180px column with `clamp()` side padding. Sections alternate light and dark bands with
-`clamp(4rem, 9vw, 8rem)` vertical padding. Grids of cards share 1px gaps on a hairline ground
-rather than floating cards. The nav collapses to a toggle below 860px; tables restack below 700px.
-Anchored sections clear the sticky nav through `scroll-padding-top: 5.5rem` on `html`.
+A 1180px column with `clamp()` side padding, bands of `clamp(4rem, 9vw, 8rem)`. Card grids share 1px
+gaps on a hairline ground. The nav collapses below 860px; the versus table restacks below 700px with
+its row labels at full width. Anchors clear the sticky nav with `scroll-padding-top: 5.5rem` on `html`.
 
 ## Elevation & Depth
 
-Flat by default. Raised grids on light ground carry one neutral shadow; buttons carry a small dark
-one. Depth on dark bands comes from the step between Night and Panel, not from light effects.
+Layered and warm. Raised grids on light carry a warm shadow; dark bands get depth from radial
+glows and a faint grain over the whole page.
 
 ### Shadow Vocabulary
-- **Sheet lift** (`box-shadow: 22px 40px -28px rgba(0, 0, 0, .22)`): the marco, agents, security,
-  steps and versus grids, and the demo chat.
-
-### Named Rules
-**The No-Glow Rule.** No zero-offset or coloured shadows, no gradients, no film grain. The one
-gradient is the dark scrim that keeps the intro's motto legible over its photograph.
+- **Sheet lift** (`box-shadow: 22px 40px -28px rgba(40, 24, 12, .35)`): marco, agents, security, steps and versus grids, and the demo chat.
+- **Gold lift** (`box-shadow: 0 12px 30px -14px` gold at 65%): the primary button on dark bands; the featured plan carries a wider gold shadow.
 
 ## Shapes
 
-Gently rounded containers (12px), buttons and fields at 8px, chips and tags as full pills. The demo
-chat's device frame is 16px; QR plates and photo frames 4px, portraits 2px. Rules are 1px. No side stripes thicker than 1px on cards or callouts.
+Containers 12px, buttons 8px, the demo chat 16px, chips and tags full pills, QR plates and photo
+frames 4px, portraits 2px. Seams between light and dark bands, the hero seam and the capability
+card hover bar are solid gold lines.
 
 ## Components
 
 ### Buttons
-- **Shape:** gently rounded (8px).
-- **Primary:** Ink fill with Paper text on light; Chalk fill with Night text on dark. One primary per group.
-- **Hover / Focus:** hover lifts 2px and softens the fill; focus is a 2px ring in Ink on light and Chalk on dark, offset 3px.
-- **Ghost:** 1px outline in the text colour, no fill.
+- **Primary:** Patina Gold with Button Ink text on every ground; hover Soft Gold and a 2px lift.
+- **Ghost:** 1px Ink outline on light; Marble text with a Dark Hairline outline on dark, gold border on hover.
+- **Focus:** a 2px ring offset 3px, Oxblood on light grounds, Gold on dark bands, the nav, the legal nav, the leader agent card and the intro.
 
 ### Access chips (P/U/X)
-The signature component. Three states, readable in greyscale:
-- **Sí:** solid Ink pill, Paper text (inverted to Chalk on the leader card and the dark table).
-- **No:** 1px solid outline.
-- **Partial:** 1px dashed outline.
+Mono pills at 0.75rem in the status colours, each with its text label. On the leader card the partial
+chip turns Soft Gold on a gold tint.
 
 ### Cards / Containers
-- **Corner Style:** 12px on the outer grid, square inside it.
-- **Background:** Sheet on light, Panel on dark.
-- **Border:** 1px Hairline or Dark Hairline.
-- **Internal Padding:** `clamp(1.6rem, 3vw, 2.6rem)`.
+Card (`stone-card`) on light, Panel on dark, 1px hairline borders, internal padding `clamp(1.6rem, 3vw, 2.6rem)`.
 
 ### Navigation
-Night band, Chalk wordmark in tracked Cinzel, Ash links that turn Chalk on hover, and an outlined
-pill for "Registrarse". Mobile uses a toggle and a stacked panel.
+A translucent Night band with a gold hairline under it, Marble wordmark in tracked Cinzel, Dark Muted
+links, and a gold outlined pill for "Registrarse".
 
 ### Demo chat
-A Night device frame. Outgoing bubbles are Chalk with Night text, incoming are Panel with a hairline.
-System lines are dashed pills. "Aprobar" is the only filled control.
+A Night device frame with a gold avatar. Outgoing bubbles are oxblood mixed into Night, incoming are
+Panel 2; system lines are dashed gold pills; "Aprobar" is the only gold filled control.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** mark state with fill, outline or dash, and keep the text label that names it.
-- **Do** keep the focus ring 2px Ink on light and Chalk on dark.
-- **Do** keep the emblem as the only coloured element.
+- **Do** keep gold text on dark grounds and oxblood text on light ones.
+- **Do** keep the focus ring Oxblood on light and Gold on dark.
+- **Do** keep every status chip's text label; the hue is never the only signal.
 - **Do** keep every font self-hosted in `_astro/fonts/`.
 
 ### Don't:
-- **Don't** reintroduce gold, oxblood or cream as CSS values.
-- **Don't** add glows, radial gradients, grain or double frames.
-- **Don't** use a border wider than 1px on one side of a card or callout.
+- **Don't** change the palette to black and white or any other scheme without the owner; it was tried and reversed on 2026-09-13.
+- **Don't** touch the logo, the Justitia emblem or the intro art here; they change under their own ticket.
 - **Don't** set functional text below 0.72rem or sentence-long tags in uppercase.
 - **Don't** change copy to fix a design problem; wording belongs to PRE-42.
