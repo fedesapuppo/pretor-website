@@ -80,7 +80,7 @@
     '<div class="prologo__curtain prologo__curtain--l" aria-hidden="true"></div>' +
     '<div class="prologo__curtain prologo__curtain--r" aria-hidden="true"></div>' +
     '<div class="prologo__layer prologo__lema" aria-hidden="true"><h2>LEX ANTIQVA<br>MENS NOVA</h2><p>La inteligencia que dirige tu estudio jurídico.</p></div>' +
-    '<div class="prologo__cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg><span>Descend&eacute;</span></div>' +
+    '<div class="prologo__cue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#cda455" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg><span>Descend&eacute;</span></div>' +
     '<div class="prologo__carga" aria-hidden="true"><img src="/_astro/justitia.png" alt=""><span>PRETOR</span></div>' +
     '<button class="prologo__saltar" type="button">Saltar introducci&oacute;n</button>' +
     "</div>";
