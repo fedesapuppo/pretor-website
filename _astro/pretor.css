@@ -69,6 +69,7 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
   -webkit-text-size-adjust: 100%;
 }
 @media (prefers-reduced-motion:reduce) {
@@ -109,12 +110,6 @@ a {
 }
 .section {
   padding-block: var(--section-y);
-}
-section[id] {
-  scroll-margin-top: 5.5rem;
-}
-#top {
-  scroll-margin-top: 0;
 }
 .section--dark {
   background: var(--black);
@@ -502,7 +497,7 @@ section[id] {
   color: var(--stone);
   padding: .6rem 1rem;
   border-radius: var(--radius-sm);
-  z-index: 100;
+  z-index: 300;
   transition: top .2s var(--ease);
 }
 .skip-link[data-astro-cid-5hce7sga]:focus {
@@ -744,9 +739,9 @@ section[id] {
   font-size: var(--step-1);
 }
 .agent__tag[data-astro-cid-mrg5s34m] {
-  font-size: .68rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: .02em;
+  text-transform: none;
   color: var(--ink);
   border: 1px solid color-mix(in srgb,var(--ink) 40%,transparent);
   border-radius: 999px;
@@ -888,6 +883,7 @@ section[id] {
 }
 .sec__table-wrap[data-astro-cid-xdski4nv] {
   margin-top: 1.8rem;
+  overflow-x: auto;
 }
 .sec__table[data-astro-cid-xdski4nv] {
   width: 100%;
@@ -1499,7 +1495,7 @@ section[id] {
   margin-top: .3rem;
   text-align: right;
   font-family: var(--mono);
-  font-size: .62rem;
+  font-size: .72rem;
   letter-spacing: .06em;
   color: currentColor;
   opacity: .7;
@@ -1533,7 +1529,7 @@ section[id] {
   padding: .3em .5em;
   border: 1px solid color-mix(in srgb, var(--marble) 45%, transparent);
   border-radius: 6px;
-  font-size: .62rem;
+  font-size: .72rem;
   letter-spacing: .1em;
   color: var(--marble);
 }
@@ -2060,7 +2056,7 @@ summary:focus-visible {
 }
 .acc {
   font-family: var(--mono);
-  font-size: .66rem;
+  font-size: .75rem;
   letter-spacing: .02em;
   padding: .22em .65em;
   border-radius: 999px;
@@ -2351,6 +2347,7 @@ summary:focus-visible {
   }
   .versus__table tbody th {
     padding-top: 1rem;
+    width: auto;
     font-family: var(--serif);
     font-size: var(--step-1);
   }
