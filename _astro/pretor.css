@@ -617,7 +617,7 @@ a {
     bottom: 14%;
     left: 50%;
     width: 1px;
-    background: linear-gradient(transparent,var(--marble),transparent);
+    background: var(--marble);
     opacity: .6;
   }
 }
@@ -1176,7 +1176,7 @@ a {
 }
 .brand__tick[data-astro-cid-dmqpwcec] {
   width: 3px;
-  background: linear-gradient(var(--dtext), var(--marble));
+  background: var(--marble);
 }
 /* ---- 4. Hero + diptych ------------------------------------ */
 .hero[data-astro-cid-bbe6dxrz] {
@@ -1215,7 +1215,7 @@ a {
   color: var(--dtext);
 }
 .hero__seam[data-astro-cid-bbe6dxrz] {
-  background: linear-gradient(transparent, var(--marble), transparent) !important;
+  background: var(--marble) !important;
   opacity: .8 !important;
   width: 1px !important;
 }
@@ -1270,7 +1270,7 @@ a {
   top: 0;
   bottom: 0;
   width: 1px;
-  background: linear-gradient(var(--marble), transparent);
+  background: var(--marble);
   opacity: 0;
   transition: opacity .3s var(--ease);
 }
@@ -1701,7 +1701,7 @@ a {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--marble) 40%, transparent) 25%, color-mix(in srgb, var(--marble) 40%, transparent) 75%, transparent);
+  background: color-mix(in srgb, var(--marble) 40%, transparent);
   pointer-events: none;
 }
 ::selection {
@@ -1719,6 +1719,7 @@ summary:focus-visible {
 .nav :focus-visible,
 .legal-nav :focus-visible,
 .agent--leader :focus-visible,
+.prologo :focus-visible,
 .demo__chat :focus-visible {
   outline-color: var(--marble);
 }

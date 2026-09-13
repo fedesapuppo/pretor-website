@@ -161,7 +161,8 @@ one. Depth on dark bands comes from the step between Night and Panel, not from l
   steps and versus grids, and the demo chat.
 
 ### Named Rules
-**The No-Glow Rule.** No zero-offset or coloured shadows, no radial spotlights, no film grain.
+**The No-Glow Rule.** No zero-offset or coloured shadows, no gradients, no film grain. The one
+gradient is the dark scrim that keeps the intro's motto legible over its photograph.
 
 ## Shapes
 
