@@ -1,8 +1,4 @@
 {
-  "env": {
-    "IMPECCABLE_NO_UPDATE_CHECK": "1",
-    "IMPECCABLE_NO_STALENESS_CHECK": "1"
-  },
   "hooks": {
     "PostToolUse": [
       {
@@ -10,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ ! -f \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" ] || IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "command": "[ -d \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/bin\" ] || [ -d \"${CLAUDE_PROJECT_DIR}/.impeccable/engine/bin\" ] || exit 0; IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
             "timeout": 5,
             "statusMessage": "Checking UI changes"
           }
@@ -22,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ ! -f \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" ] || IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "command": "[ -d \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/bin\" ] || [ -d \"${CLAUDE_PROJECT_DIR}/.impeccable/engine/bin\" ] || exit 0; IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/.impeccable/engine\" \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
             "timeout": 30,
             "statusMessage": "Design deep pass"
           }

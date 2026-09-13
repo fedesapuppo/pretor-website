@@ -187,9 +187,6 @@ a {
   background: var(--ink);
   color: var(--stone);
 }
-.btn--primary:hover {
-  background: var(--ink);
-}
 .btn--ghost {
   background: transparent;
   color: var(--ink);
@@ -544,10 +541,6 @@ a {
 .hero__world--ai[data-astro-cid-bbe6dxrz] {
   background: var(--black);
   color: var(--marble);
-  background-image: none;
-  background-size: 100% 2px,auto;
-  background-repeat: no-repeat;
-  background-position: top left,center;
 }
 .hero__world[data-astro-cid-bbe6dxrz] .eyebrow[data-astro-cid-bbe6dxrz] {
   margin-bottom: 1rem;
@@ -606,9 +599,6 @@ a {
     flex-direction: column;
     justify-content: flex-start;
     min-height: 340px;
-  }
-  .hero__world--ai[data-astro-cid-bbe6dxrz] {
-    background-image: none;
   }
   .hero__seam[data-astro-cid-bbe6dxrz] {
     display: block;
@@ -724,9 +714,6 @@ a {
   padding: clamp(1.6rem,2.8vw,2.2rem);
   transition: background .3s var(--ease);
 }
-.agent[data-astro-cid-mrg5s34m]:hover {
-  background: #fff;
-}
 .agent__top[data-astro-cid-mrg5s34m] {
   display: flex;
   align-items: center;
@@ -764,16 +751,6 @@ a {
   color: var(--stone);
   position: relative;
   overflow: hidden;
-}
-.agent--leader[data-astro-cid-mrg5s34m]:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: none;
-  pointer-events: none;
-}
-.agent--leader[data-astro-cid-mrg5s34m]:hover {
-  background: var(--ink);
 }
 .agent--leader[data-astro-cid-mrg5s34m] .agent__name[data-astro-cid-mrg5s34m] {
   font-family: var(--sans);
@@ -1150,8 +1127,6 @@ a {
 /* ---- 2. Global atmosphere --------------------------------- */
 .section--dark {
   position: relative;
-  background-color: var(--black);
-  background-image: none;
 }
 /* where light meets dark, both directions */
 .section--dark + .section--stone,
@@ -1204,10 +1179,6 @@ a {
   background: var(--stone-2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
 }
-.hero__world--ai[data-astro-cid-bbe6dxrz] {
-  background-color: var(--black);
-  background-image: none;
-}
 .hero__agents[data-astro-cid-bbe6dxrz] li {
   align-items: baseline;
 }
@@ -1244,7 +1215,6 @@ a {
   transition: background .3s var(--ease), transform .3s var(--ease);
 }
 .marco__card[data-astro-cid-z2ekr6xw]:hover {
-  background: #fff;
   transform: translateY(-3px);
 }
 .marco__n[data-astro-cid-z2ekr6xw] {
@@ -1289,7 +1259,6 @@ a {
   padding-bottom: .9rem;
   border-radius: 0;
   background: none;
-  box-shadow: none;
   border-bottom: 1px solid var(--dline);
   display: flex;
   align-items: center;
@@ -1314,9 +1283,6 @@ a {
 /* ---- 8. Agents -------------------------------------------- */
 .agents__grid[data-astro-cid-mrg5s34m] {
   box-shadow: var(--shadow);
-}
-.agent--leader[data-astro-cid-mrg5s34m]::before {
-  background: none !important;
 }
 .agent__role[data-astro-cid-mrg5s34m] {
   color: var(--ink);
@@ -1497,7 +1463,6 @@ a {
   font-family: var(--mono);
   font-size: .72rem;
   letter-spacing: .06em;
-  color: currentColor;
   opacity: .7;
 }
 .demo__sys {
@@ -1590,8 +1555,6 @@ a {
 }
 .btn--primary {
   box-shadow: 0 10px 26px -14px rgba(0, 0, 0, .55);
-}
-.section--dark .btn--primary {
 }
 .btn svg {
   flex: none;
@@ -1715,19 +1678,13 @@ summary:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
-.section--dark :focus-visible,
 .nav :focus-visible,
 .legal-nav :focus-visible,
 .agent--leader :focus-visible,
-.prologo :focus-visible,
-.demo__chat :focus-visible {
+.prologo :focus-visible {
   outline-color: var(--marble);
 }
 /* ---- 21. CTA: one primary everywhere ------------------------- */
-.btn--primary {
-  background: var(--ink);
-  color: var(--stone);
-}
 .btn--primary:hover {
   background: var(--muted);
 }
@@ -2080,14 +2037,6 @@ summary:focus-visible {
   border-top-color: var(--dline);
 }
 .agent--leader[data-astro-cid-mrg5s34m] .acc--partial {
-  color: var(--marble);
-  border-color: var(--marble);
-}
-.agent--leader[data-astro-cid-mrg5s34m] .acc--yes {
-  color: var(--black);
-  background: var(--marble);
-}
-.agent--leader[data-astro-cid-mrg5s34m] .acc--no {
   color: var(--marble);
   border-color: var(--marble);
 }
@@ -2941,7 +2890,7 @@ html {
   gap: 18px;
   padding: 0 24px;
   opacity: 0;
-  background: radial-gradient(ellipse 78% 62% at 50% 52%, rgba(12, 10, 8, .78), rgba(12, 10, 8, .32) 58%, transparent 80%);
+  background: radial-gradient(ellipse 78% 62% at 50% 52%, color-mix(in srgb, var(--black) 78%, transparent), color-mix(in srgb, var(--black) 32%, transparent) 58%, transparent 80%);
 }
 .prologo__lema h2 {
   font-family: "Cinzel", serif;
@@ -2950,7 +2899,7 @@ html {
   letter-spacing: .08em;
   line-height: 1.12;
   color: var(--marble);
-  text-shadow: 0 1px 6px rgba(12, 10, 8, .9), 0 2px 30px rgba(12, 10, 8, .85);
+  text-shadow: 0 1px 6px color-mix(in srgb, var(--black) 90%, transparent), 0 2px 30px color-mix(in srgb, var(--black) 85%, transparent);
   margin: 0;
 }
 .prologo__lema p {
@@ -2958,7 +2907,7 @@ html {
   font-size: clamp(14px, 1.4vw, 19px);
   letter-spacing: .02em;
   color: color-mix(in srgb, var(--marble) 88%, transparent);
-  text-shadow: 0 1px 14px rgba(12, 10, 8, .8);
+  text-shadow: 0 1px 14px color-mix(in srgb, var(--black) 80%, transparent);
   max-width: 480px;
   margin: 0;
 }
@@ -2977,7 +2926,7 @@ html {
   letter-spacing: .3em;
   text-transform: uppercase;
   color: var(--marble);
-  text-shadow: 0 1px 10px rgba(12, 10, 8, .95), 0 0 26px rgba(12, 10, 8, .7);
+  text-shadow: 0 1px 10px color-mix(in srgb, var(--black) 95%, transparent), 0 0 26px color-mix(in srgb, var(--black) 70%, transparent);
   transition: opacity .4s ease;
 }
 .prologo__cue svg {
@@ -2994,7 +2943,7 @@ html {
   right: 22px;
   bottom: 24px;
   appearance: none;
-  background: rgba(12, 10, 8, .4);
+  background: color-mix(in srgb, var(--black) 40%, transparent);
   border: 1px solid color-mix(in srgb, var(--marble) 40%, transparent);
   border-radius: 999px;
   color: color-mix(in srgb, var(--marble) 90%, transparent);
