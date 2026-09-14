@@ -73,6 +73,24 @@
         ],
         "createdAt": "2026-09-13T17:27:28.928Z",
         "reason": "User confirmed: the owner reverted to the main palette on 2026-09-13, cream stone and gold glows included; see DESIGN.md. The oxblood left rule on the bespoke-agent example"
+      },
+      {
+        "rule": "tight-leading",
+        "value": "*",
+        "files": [
+          "blog/index.html"
+        ],
+        "createdAt": "2026-09-14T06:09:21.950Z",
+        "reason": "Agent, verified in a render: the 1.18 hit is the two-line Cinzel post title, the same leading as the legal pages' h2; body text in the list is at 1.65"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "blog/equipo-de-agentes/index.html"
+        ],
+        "createdAt": "2026-09-14T06:09:21.982Z",
+        "reason": "Agent, verified: the page has no em-dash; the count is the -- runs that draw the ASCII team diagram in the founder's post"
       }
     ]
   }
