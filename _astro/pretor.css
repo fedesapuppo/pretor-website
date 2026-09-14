@@ -2854,6 +2854,94 @@ summary:focus-visible {
 .footer__legal a:hover {
   border-bottom-color: currentColor;
 }
+.legal__block code {
+  font-family: var(--mono);
+  font-size: .88em;
+  padding: .05em .35em;
+  background: var(--stone-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+.post__diagram {
+  margin-top: 1.4rem;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  background: var(--stone-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
+  font-size: .78rem;
+  line-height: 1.45;
+  color: var(--ink);
+  white-space: pre;
+}
+.post__diagram code {
+  padding: 0;
+  font-size: inherit;
+  background: none;
+  border: 0;
+}
+.post__note {
+  margin-top: 2rem;
+  padding: 1.3rem 1.5rem;
+  background: var(--stone-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--oxblood);
+  border-radius: var(--radius);
+}
+.post__note .medida__label {
+  margin-bottom: .8rem;
+}
+.post__details summary {
+  padding-block: 1.1rem;
+}
+.post__details .faq__body p {
+  max-width: none;
+}
+.post__cta {
+  margin-top: 1.8rem;
+}
+.blog__list {
+  list-style: none;
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+  border-top: 1px solid var(--line);
+}
+.blog__entry {
+  padding-block: 1.8rem;
+  border-bottom: 1px solid var(--line);
+}
+.blog__entry time {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.blog__entry h2 {
+  margin-top: .5rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-2);
+  line-height: 1.18;
+}
+.blog__entry h2 a {
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+}
+.blog__entry h2 a:hover {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+}
+.blog__entry p {
+  margin-top: .6rem;
+  color: var(--muted);
+}
+.medida__text a {
+  color: var(--oxblood);
+  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
+}
+.medida__text a:hover {
+  border-bottom-color: var(--oxblood);
+}
 
 /* ==========================================================================
    SECTION 3 of 3 - the cinematic intro
