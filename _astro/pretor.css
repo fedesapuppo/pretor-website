@@ -2891,7 +2891,6 @@ summary:focus-visible {
   padding: 1.3rem 1.5rem;
   background: var(--stone-card);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--oxblood);
   border-radius: var(--radius);
 }
 .post__note .medida__label {
