@@ -2761,6 +2761,8 @@ summary:focus-visible {
 .legal__block p + ul,
 .legal__block ol + p,
 .legal__block p + ol,
+.legal__block pre + p,
+.legal__block div + p,
 .legal__block p + div {
   margin-top: 1.1rem;
 }
