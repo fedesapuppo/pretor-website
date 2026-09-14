@@ -1970,12 +1970,14 @@ summary:focus-visible {
    global `a { color: inherit; text-decoration: none }` renders it as ordinary prose, which is the
    same as not having put a link there. Matches .faq__body a, which solved this already. */
 .empezar__step a,
-.empezar__guide a {
+.empezar__guide a,
+.medida__text a {
   color: var(--oxblood);
   border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
 }
 .empezar__step a:hover,
-.empezar__guide a:hover {
+.empezar__guide a:hover,
+.medida__text a:hover {
   border-color: var(--oxblood);
 }
 .empezar__guide {
@@ -2808,7 +2810,8 @@ summary:focus-visible {
 }
 /* La tabla desborda en teléfono; scrollea dentro de su caja y nunca
    empuja el ancho de la página. */
-.legal__table-wrap {
+.legal__table-wrap,
+.post__diagram {
   margin-top: 1.4rem;
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -2868,17 +2871,10 @@ summary:focus-visible {
   overflow-wrap: anywhere;
 }
 .post__diagram {
-  margin-top: 1.4rem;
   padding: 1rem 1.2rem;
-  overflow-x: auto;
-  background: var(--stone-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
   font-family: var(--mono);
   font-size: .78rem;
   line-height: 1.45;
-  color: var(--ink);
-  white-space: pre;
 }
 .post__diagram code {
   padding: 0;
@@ -2892,18 +2888,6 @@ summary:focus-visible {
   background: var(--stone-card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-}
-.post__note .medida__label {
-  margin-bottom: .8rem;
-}
-.post__details summary {
-  padding-block: 1.1rem;
-}
-.post__details .faq__body p {
-  max-width: none;
-}
-.post__cta {
-  margin-top: 1.8rem;
 }
 .blog__list {
   list-style: none;
@@ -2927,7 +2911,6 @@ summary:focus-visible {
   line-height: 1.18;
 }
 .blog__entry h2 a {
-  color: var(--ink);
   border-bottom: 1px solid transparent;
 }
 .blog__entry h2 a:hover {
@@ -2937,13 +2920,6 @@ summary:focus-visible {
 .blog__entry p {
   margin-top: .6rem;
   color: var(--muted);
-}
-.medida__text a {
-  color: var(--oxblood);
-  border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
-}
-.medida__text a:hover {
-  border-bottom-color: var(--oxblood);
 }
 
 /* ==========================================================================
