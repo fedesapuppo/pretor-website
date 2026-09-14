@@ -71,10 +71,10 @@
         </p>
 
         <aside class="legal__block post__note" aria-labelledby="nota">
-          <p class="medida__label" id="nota">Nota del 14 de septiembre de 2026</p>
-          <p>
-            Este texto se publicó el 1 de julio de 2026 en fedesapuppo.com. Lo traemos como se
-            escribió. Desde entonces, Pretor cambió:
+          <p id="nota">
+            Nota del 14 de septiembre de 2026. Este texto se publicó el 1 de julio de 2026 en
+            fedesapuppo.com. Lo traemos como se escribió, con trato de usted. Desde entonces, Pretor
+            cambió:
           </p>
           <ul class="legal__list">
             <li>
@@ -83,6 +83,10 @@
             </li>
             <li>La aprobación en Telegram tiene dos botones: aprobar y cancelar.</li>
             <li>Comunicador, el servicio de Instagram, está apagado. Doctor ya no corre.</li>
+            <li>
+              El equipo es más grande que el de la tabla. Entre otros, Procurador sigue los
+              expedientes y Gestor lleva clientes y honorarios.
+            </li>
             <li>
               Hay doce escribientes, no seis. Secretario solo lee la agenda y el correo. Invitar a
               alguien o enviar un correo lo hace Pretor, con su aprobación.
@@ -95,10 +99,12 @@
               La biblioteca ya no es una colección de 811 documentos. La búsqueda combina
               significado, texto exacto y un reordenamiento final.
             </li>
-            <li>El workflow de la reunión tiene ocho pasos. Uno es su aprobación antes de entregar.</li>
             <li>
-              El extractor elige cómo leer un archivo por su extensión. Un RTF con extensión .doc lo
-              resuelve un lector de respaldo.
+              El workflow de la reunión sumó pasos. Uno de ellos es su aprobación antes de entregar.
+            </li>
+            <li>
+              El extractor no mira el contenido real de un archivo: elige cómo leerlo por la
+              extensión.
             </li>
           </ul>
         </aside>
@@ -422,6 +428,8 @@
             <pre
               class="post__diagram"
               tabindex="0"
+              role="region"
+              aria-label="El arreglo de una línea en Mastra"
             ><code>value: typeof output === "string" ? output : (output.text ?? "")</code></pre>
             <p>
               Lo reportamos, abrimos
