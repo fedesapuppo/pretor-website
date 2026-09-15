@@ -2758,14 +2758,8 @@ summary:focus-visible {
   letter-spacing: .01em;
   margin-bottom: 1.1rem;
 }
-.legal__block p + p,
-.legal__block ul + p,
-.legal__block p + ul,
-.legal__block ol + p,
-.legal__block p + ol,
-.legal__block pre + p,
-.legal__block div + p,
-.legal__block p + div {
+.legal__block :is(p, ul, ol, pre, div) + p,
+.legal__block p + :is(ul, ol, div) {
   margin-top: 1.1rem;
 }
 .legal__block strong {
