@@ -109,7 +109,8 @@ across both, from the Justitia emblem to the primary buttons.
 
 This palette is an owner decision. A black-and-white pass was built on 2026-09-12 and reversed on
 2026-09-13 because it read as another legal product's site; the palette below is the one on main,
-kept as is. The logo and the Justitia art change later, under their own ticket, not here.
+kept as is. The logo changed on 2026-09-15 (PRE-215) and the palette did not; the intro art
+changes later, under its own ticket, not here.
 
 Every value in this file is read from `_astro/pretor.css`. Section 1 of that sheet declares the
 tokens and section 2's "Palette retune" overrides most of them; the frontmatter lists the values
@@ -214,6 +215,12 @@ Card (`stone-card`) on light, Panel on dark, 1px hairline borders, internal padd
 A translucent Night band with a gold hairline under it, Marble wordmark in tracked Cinzel, Dark Muted
 links, and a gold outlined pill for "Registrarse".
 
+### Mark
+The brushed-gold Justitia, cut out of the owner's logo with its marble removed, on dark grounds only:
+nav, legal nav, hero, contacto, footer and the intro loader. The favicon is the scales alone on a
+Night rounded tile, because the whole figure does not read at 16px and bare gold vanishes on a light
+tab. `og.jpg` is the whole logo, wordmark included, on Night.
+
 ### Demo chat
 A Night device frame with a gold avatar. Outgoing bubbles are oxblood mixed into Night, incoming are
 Panel 2; system lines are dashed gold pills; "Aprobar" is the only gold filled control.
@@ -228,6 +235,7 @@ Panel 2; system lines are dashed gold pills; "Aprobar" is the only gold filled c
 
 ### Don't:
 - **Don't** change the palette to black and white or any other scheme without the owner; it was tried and reversed on 2026-09-13.
-- **Don't** touch the logo, the Justitia emblem or the intro art here; they change under their own ticket.
+- **Don't** touch the intro art here; it changes under its own ticket.
+- **Don't** put the transparent Justitia on a light ground or rasterise the PRETOR wordmark beside it; the CSS text is the wordmark.
 - **Don't** set functional text below 0.72rem or sentence-long tags in uppercase.
 - **Don't** change copy to fix a design problem; wording belongs to PRE-42.
