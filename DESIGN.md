@@ -236,6 +236,6 @@ Panel 2; system lines are dashed gold pills; "Aprobar" is the only gold filled c
 ### Don't:
 - **Don't** change the palette to black and white or any other scheme without the owner; it was tried and reversed on 2026-09-13.
 - **Don't** touch the intro art here; it changes under its own ticket.
-- **Don't** put the transparent Justitia on a light ground or rasterise the PRETOR wordmark beside it; the CSS text is the wordmark.
+- **Don't** rasterise the PRETOR wordmark beside the mark; the CSS text is the wordmark.
 - **Don't** set functional text below 0.72rem or sentence-long tags in uppercase.
 - **Don't** change copy to fix a design problem; wording belongs to PRE-42.

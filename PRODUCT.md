@@ -63,8 +63,8 @@ and each abono lasts 30 days from payment (CLAUDE.md, "The prices in index.html 
 ## Brand Commitments
 
 - Name PRETOR, set in Cinzel capitals, with the brushed-gold Justitia emblem the owner delivered on
-  2026-09-15 (`_astro/justitia.png`, `og.jpg`, `favicon.png`) and the Roman-law register: "Iura novit curia", "Dura lex, sed lex", "Fiat iustitia",
-  "Lex antiqva, mens nova" (index.html, intro).
+  2026-09-15 (`_astro/justitia.png`, `og.jpg`, `favicon.png`) and the Roman-law register: "Iura
+  novit curia", "Dura lex, sed lex", "Fiat iustitia", "Lex antiqva, mens nova" (index.html, intro).
 - Spanish of Argentina, formal usted throughout.
 - The palette on main stays. A black-and-white pass was built on 2026-09-12 and the owner reversed
   it on 2026-09-13: it read as another legal product's site. The logo changed on 2026-09-15
