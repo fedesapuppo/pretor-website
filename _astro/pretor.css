@@ -2772,11 +2772,11 @@ summary:focus-visible {
   font-weight: 600;
   color: var(--ink);
 }
-.legal__block a {
+.legal__block a:not(.btn) {
   color: var(--oxblood);
   border-bottom: 1px solid rgba(107, 39, 55, .3);
 }
-.legal__block a:hover {
+.legal__block a:not(.btn):hover {
   border-bottom-color: var(--oxblood);
 }
 .legal__list {
