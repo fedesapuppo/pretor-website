@@ -217,9 +217,9 @@ links, and a gold outlined pill for "Registrarse".
 
 ### Mark
 The brushed-gold Justitia, cut out of the owner's logo with its marble removed, on dark grounds only:
-nav, legal nav, hero, contacto, footer and the intro loader. The favicon is the scales alone on a
-Night rounded tile, because the whole figure does not read at 16px and bare gold vanishes on a light
-tab. `og.jpg` is the whole logo, wordmark included, on Night.
+nav, legal nav, hero, contacto, footer and the intro loader. The favicon is the same figure on a
+Night rounded tile, because bare gold vanishes on a light tab. `og.jpg` is the whole logo, wordmark
+included, on Night.
 
 ### Demo chat
 A Night device frame with a gold avatar. Outgoing bubbles are oxblood mixed into Night, incoming are
