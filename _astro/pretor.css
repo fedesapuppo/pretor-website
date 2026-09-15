@@ -1970,12 +1970,14 @@ summary:focus-visible {
    global `a { color: inherit; text-decoration: none }` renders it as ordinary prose, which is the
    same as not having put a link there. Matches .faq__body a, which solved this already. */
 .empezar__step a,
-.empezar__guide a {
+.empezar__guide a,
+.medida__text a {
   color: var(--oxblood);
   border-bottom: 1px solid color-mix(in srgb, var(--oxblood) 40%, transparent);
 }
 .empezar__step a:hover,
-.empezar__guide a:hover {
+.empezar__guide a:hover,
+.medida__text a:hover {
   border-color: var(--oxblood);
 }
 .empezar__guide {
@@ -2756,21 +2758,19 @@ summary:focus-visible {
   letter-spacing: .01em;
   margin-bottom: 1.1rem;
 }
-.legal__block p + p,
-.legal__block ul + p,
-.legal__block p + ul,
-.legal__block p + div {
+.legal__block :is(p, ul, ol, pre, div) + p,
+.legal__block p + :is(ul, ol, div) {
   margin-top: 1.1rem;
 }
 .legal__block strong {
   font-weight: 600;
   color: var(--ink);
 }
-.legal__block a {
+.legal__block a:not(.btn) {
   color: var(--oxblood);
   border-bottom: 1px solid rgba(107, 39, 55, .3);
 }
-.legal__block a:hover {
+.legal__block a:not(.btn):hover {
   border-bottom-color: var(--oxblood);
 }
 .legal__list {
@@ -2804,7 +2804,8 @@ summary:focus-visible {
 }
 /* La tabla desborda en teléfono; scrollea dentro de su caja y nunca
    empuja el ancho de la página. */
-.legal__table-wrap {
+.legal__table-wrap,
+.post__diagram {
   margin-top: 1.4rem;
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -2853,6 +2854,66 @@ summary:focus-visible {
 }
 .footer__legal a:hover {
   border-bottom-color: currentColor;
+}
+.legal__block code {
+  font-family: var(--mono);
+  font-size: .88em;
+  padding: .05em .35em;
+  background: var(--stone-card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+.post__diagram {
+  padding: 1rem 1.2rem;
+  font-family: var(--mono);
+  font-size: .78rem;
+  line-height: 1.45;
+}
+.post__diagram code {
+  padding: 0;
+  font-size: inherit;
+  background: none;
+  border: 0;
+}
+.post__note {
+  margin-top: 2rem;
+  padding: 1.3rem 1.5rem;
+  background: var(--stone-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.blog__list {
+  list-style: none;
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+  border-top: 1px solid var(--line);
+}
+.blog__entry {
+  padding-block: 1.8rem;
+  border-bottom: 1px solid var(--line);
+}
+.blog__entry time {
+  font-family: var(--mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+.blog__entry h2 {
+  margin-top: .5rem;
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: var(--step-2);
+  line-height: 1.18;
+}
+.blog__entry h2 a {
+  border-bottom: 1px solid transparent;
+}
+.blog__entry h2 a:hover {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+}
+.blog__entry p {
+  margin-top: .6rem;
+  color: var(--muted);
 }
 
 /* ==========================================================================
