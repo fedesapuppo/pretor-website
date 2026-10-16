@@ -1348,6 +1348,19 @@ body[data-astro-cid-5hce7sga]::after {
 .cap__body[data-astro-cid-eq4gkk3n] {
   color: #c4bba8;
 }
+/* The one capability with its own page, linked under the grid. */
+.cap__more {
+  margin-top: 1.6rem;
+  color: #c4bba8;
+}
+.cap__more a {
+  font-weight: 600;
+  color: var(--gold);
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+}
+.cap__more a:hover {
+  border-color: var(--gold);
+}
 /* ---- 8. Agents -------------------------------------------- */
 .agents__grid[data-astro-cid-mrg5s34m] {
   box-shadow: var(--shadow);
